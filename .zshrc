@@ -144,9 +144,7 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 
 #自分専用
-alias mse='ssh -Y -C -p 22 1w1302541@muse01.mse.waseda.ac.jp'
 alias pi='ssh -Y -C pi@192.168.11.8'
-alias rpi='ssh -Y -C pi@10.8.0.1'
 alias webdir="cd /Applications/MAMP/htdocs/"
 alias sim="../SimMips-0.5.5/SimMips -M ../SimMips-0.5.5/test/mem_mieru.txt "
 alias brew="env PATH=${PATH/\/Applications\/MAMP\/\Library\/bin:/} brew"
