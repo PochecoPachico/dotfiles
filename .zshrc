@@ -148,8 +148,6 @@ alias pi='ssh -Y -C pi@192.168.11.8'
 alias webdir="cd /Applications/MAMP/htdocs/"
 alias sim="../SimMips-0.5.5/SimMips -M ../SimMips-0.5.5/test/mem_mieru.txt "
 alias brew="env PATH=${PATH/\/Applications\/MAMP\/\Library\/bin:/} brew"
-alias cn="open https://cnavi.waseda.jp/"
-alias wnp="open https://www.wnp.waseda.jp/portal/portal.php"
 
 # gVim
 alias gvim="open -a MacVim"
