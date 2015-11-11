@@ -145,12 +145,21 @@ alias mkdir='mkdir -p'
 
 #自分専用
 alias pi='ssh -Y -C pi@192.168.11.8'
-alias webdir="cd /Applications/MAMP/htdocs/"
-alias sim="../SimMips-0.5.5/SimMips -M ../SimMips-0.5.5/test/mem_mieru.txt "
-alias brew="env PATH=${PATH/\/Applications\/MAMP\/\Library\/bin:/} brew"
 
-# gVim
-alias gvim="open -a MacVim"
+# OS毎にalias変更
+case ${OSTYPE} in
+	darwin*)
+		# mac
+		alias webdir="cd /Applications/MAMP/htdocs/"
+		alias sim="../SimMips-0.5.5/SimMips -M ../SimMips-0.5.5/test/mem_mieru.txt "
+		alias brew="env PATH=${PATH/\/Applications\/MAMP\/\Library\/bin:/} brew"
+		# gVim
+		alias gvim="open -a MacVim"
+		;;
+	linux*)
+		# linux
+		;;
+esac
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
