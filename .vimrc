@@ -7,6 +7,7 @@ if has('vim_starting')
 	NeoBundleFetch 'Shougo/neobundle.vim'
 	"insert here your Neobundle plugins"
 	NeoBundle 'scrooloose/nerdtree'
+	NeoBundle 'Shougo/unite.vim'
 	call neobundle#end()
 endif
 
