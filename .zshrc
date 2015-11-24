@@ -18,6 +18,9 @@ colors
 # emacs 風キーバインドにする
 bindkey -e
 
+# zsh起動時にtmux起動
+[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+
 # ヒストリの設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
