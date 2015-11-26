@@ -1,6 +1,11 @@
 #license : MIT
 # http://mollifier.mit-license.org/
 
+# power line
+export PATH=$PATH:~/Library/Python/2.7/bin
+powerline-daemon -q
+. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
