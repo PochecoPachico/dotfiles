@@ -70,3 +70,11 @@ python del powerline_setup
 set laststatus=2
 set showtabline=2
 set noshowmode
+
+" MacVim
+if has("gui_macvim")
+	set columns=110
+	set lines=40
+	set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
+endif
+
