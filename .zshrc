@@ -168,7 +168,6 @@ case ${OSTYPE} in
 		alias brew="env PATH=${PATH/\/Applications\/MAMP\/\Library\/bin:/} brew"
 		# gVim
 		alias gvim="open -a MacVim"
-		alias P="| peco"
 		alias history="peco ~/.zsh_history"
 		;;
 	linux*)
