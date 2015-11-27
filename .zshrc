@@ -16,6 +16,11 @@ export PATH=$PATH:/Applications/MAMP/Library/bin
 #computerArchitecture
 export PATH=$PATH:/Users/carch/bin
 
+# settings for go
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
