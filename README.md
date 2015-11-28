@@ -1,3 +1,3 @@
-## dotfile
+## my dotfiles
 
-test
+My settings file
