@@ -2,9 +2,19 @@
 # http://mollifier.mit-license.org/
 
 # power line
-export PATH=$PATH:~/Library/Python/2.7/bin
-powerline-daemon -q
-. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+case ${OSTYPE} in
+	darwin*)
+		# mac
+    export PATH=$PATH:~/Library/Python/2.7/bin
+    powerline-daemon -q
+    . ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+		;;
+	linux*)
+		# linux
+
+		;;
+esac
+
 
 ########################################
 # 環境変数
