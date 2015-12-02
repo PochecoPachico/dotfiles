@@ -6,19 +6,19 @@ case ${OSTYPE} in
 	darwin*)
 		# mac
 		export PATH=$PATH:~/Library/Python/2.7/bin
-    		owerline-daemon -q
+    		powerline-daemon -q
     		. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 		;;
 	linux*)
 		# linux 色設定
-		if [[ $TERM = xterm ]]; then
-			TERM=xterm-256color
-		fi
 		;;
 esac
 
+#色設定
+if [[ $TERM = xterm ]]; then
+	TERM=xterm-256color
+fi
 
-########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
 
@@ -63,7 +63,6 @@ select-word-style default
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
-########################################
 # 補完
 # 補完機能を有効にする
 autoload -Uz compinit
@@ -86,7 +85,6 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 
-########################################
 # vcs_info
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
@@ -100,8 +98,6 @@ function _update_vcs_info_msg() {
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
-
-########################################
 # オプション
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
@@ -150,13 +146,6 @@ export CLICOLOR=true
 # 補完候補に色を付ける
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-########################################
-# キーバインド
-
-# ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
-bindkey '^R' history-incremental-pattern-search-backward
-
-########################################
 # エイリアス
 
 alias la='ls -a'
@@ -211,8 +200,8 @@ alias -g G='| grep'
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then
-	    # Mac
-	    alias -g C='| pbcopy'
+	# Mac
+	alias -g C='| pbcopy'
 elif which xsel >/dev/null 2>&1 ; then
 	# Linux
 	alias -g C='| xsel --input --clipboard'
@@ -220,16 +209,15 @@ fi
 
 
 
-########################################
 # OS 別の設定
 case ${OSTYPE} in
     darwin*)
-            #Mac用の設定
+            # Mac
 	    export CLICOLOR=1
 	    alias ls='ls -G -F'
 	    ;;
     linux*)
-	    #Linux用の設定
+	    # Linux
 	    alias ls='ls -F --color=auto'
 	    ;;
 esac
