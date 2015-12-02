@@ -76,17 +76,12 @@ if has("gui_macvim")
 	set columns=110
 	set lines=40
 	set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
+else
+	" gVim
+	if has('gui_running')
+		set columns=100
+		set lines=40
+		set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+	endif
 endif
 
-" gVim
-if has('gui_running')
-	set columns=100
-	set lines=40
-	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
-endif
-
-" IME settings
-if has('multi_byte_ime')
-    	hi Cursor guifg=bg guibg=Green gui=NONE
-    	hi CursorIM guifg=NONE guibg=Red gui=NONE
-endif
