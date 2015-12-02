@@ -5,13 +5,15 @@
 case ${OSTYPE} in
 	darwin*)
 		# mac
-    export PATH=$PATH:~/Library/Python/2.7/bin
-    powerline-daemon -q
-    . ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+		export PATH=$PATH:~/Library/Python/2.7/bin
+    		owerline-daemon -q
+    		. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 		;;
 	linux*)
-		# linux
-
+		# linux 色設定
+		if [[ $TERM = xterm ]]; then
+			TERM=xterm-256color
+		fi
 		;;
 esac
 
@@ -210,14 +212,11 @@ alias -g G='| grep'
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then
 	    # Mac
-	        alias -g C='| pbcopy'
-		elif which xsel >/dev/null 2>&1 ; then
-		    # Linux
-		        alias -g C='| xsel --input --clipboard'
-			elif which putclip >/dev/null 2>&1 ; then
-			    # Cygwin
-			        alias -g C='| putclip'
-				fi
+	    alias -g C='| pbcopy'
+elif which xsel >/dev/null 2>&1 ; then
+	# Linux
+	alias -g C='| xsel --input --clipboard'
+fi
 
 
 
@@ -226,13 +225,13 @@ if which pbcopy >/dev/null 2>&1 ; then
 case ${OSTYPE} in
     darwin*)
             #Mac用の設定
-	            export CLICOLOR=1
-		            alias ls='ls -G -F'
-			            ;;
-				        linux*)
-					        #Linux用の設定
-						        alias ls='ls -F --color=auto'
-							        ;;
-								esac
+	    export CLICOLOR=1
+	    alias ls='ls -G -F'
+	    ;;
+    linux*)
+	    #Linux用の設定
+	    alias ls='ls -F --color=auto'
+	    ;;
+esac
 
  #vim:set ft=zsh:
