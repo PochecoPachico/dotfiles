@@ -16,9 +16,7 @@ filetype plugin indent on
 set number
 set cursorline
 set cursorcolumn
-set smartindent
 set title
-set autoindent
 set showmatch
 set hlsearch
 
@@ -34,9 +32,11 @@ set mouse=a
 "行番号ハイライト
 hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
 
-" 全角スペースを可視化
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
-au BufNewFile,BufRead * match ZenkakuSpace /　/
+" タブ設定
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
 
 "文字コード関連
 set encoding=utf-8
