@@ -22,9 +22,6 @@ set autoindent
 set showmatch
 set hlsearch
 
-" 検索のハイライトをescを２回押すことによって消す
-nnoremap <ESC><ESC> :nohlsearch<CR>
-
 "バックスペースを空白、行末、行頭でも使用可能にする
 set backspace=indent,eol,start
 
