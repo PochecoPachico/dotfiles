@@ -10,7 +10,7 @@ if has('vim_starting')
 	NeoBundle 'Shougo/unite.vim'
 	call neobundle#end()
 endif
-
+ 
 filetype plugin indent on
 
 set number
@@ -21,6 +21,9 @@ set title
 set autoindent
 set showmatch
 set hlsearch
+
+" 検索のハイライトをescを２回押すことによって消す
+nnoremap <ESC><ESC> :nohlsearch<CR>
 
 "バックスペースを空白、行末、行頭でも使用可能にする
 set backspace=indent,eol,start
@@ -33,6 +36,10 @@ set mouse=a
 
 "行番号ハイライト
 hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
+
+" 全角スペースを可視化
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
+au BufNewFile,BufRead * match ZenkakuSpace /　/
 
 "文字コード関連
 set encoding=utf-8
@@ -58,8 +65,8 @@ colorscheme solarized
 let g:solarized_termcolors=256
 
 "音設定
-set vb t_vb=
-set visualbell
+set visualbell t_vb=
+set noerrorbells
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
