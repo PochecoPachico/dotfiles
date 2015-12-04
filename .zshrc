@@ -23,7 +23,7 @@ fi
 export LANG=ja_JP.UTF-8
 
 # MySQL
-export PATH=$PATH:/Applications/MAMP/Library/bin
+# export PATH=$PATH:/Applications/MAMP/Library/bin
 
 #computerArchitecture
 export PATH=$PATH:/Users/carch/bin
@@ -166,7 +166,7 @@ case ${OSTYPE} in
 		# mac
 		alias webdir="cd /Applications/MAMP/htdocs/"
 		alias sim="../SimMips-0.5.5/SimMips -M ../SimMips-0.5.5/test/mem_mieru.txt "
-		alias brew="env PATH=${PATH/\/Applications\/MAMP\/\Library\/bin:/} brew"
+		alias brew="env PATH=${PATH//\/Users\/shioura\/Library\/Python\/2.7\/bin:/} brew "
 		# gVim
 		alias gvim="open -a MacVim"
 		function peco-select-history() {
