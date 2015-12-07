@@ -62,8 +62,8 @@ colorscheme solarized
 let g:solarized_termcolors=256
 
 "音設定
-"set visualbell t_vb=
-"set noerrorbells
+set visualbell t_vb=
+set noerrorbells
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
