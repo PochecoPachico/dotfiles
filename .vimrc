@@ -38,6 +38,11 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
+" タブ移動
+nnoremap <Space>p :tabprevious<CR>
+nnoremap <Space>n :tabnext<CR>
+nnoremap <Space>c :tabnew<CR>
+
 "文字コード関連
 set encoding=utf-8
 set fileencoding=utf-8
@@ -54,6 +59,9 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+
+" 検索ハイライトを消す
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 "色設定
 syntax enable
