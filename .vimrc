@@ -63,7 +63,7 @@ inoremap <C-l> <Right>
 " 検索ハイライトを消す
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
-"色設定
+"色設定 
 syntax enable
 set background=dark
 colorscheme solarized
