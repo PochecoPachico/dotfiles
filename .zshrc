@@ -28,10 +28,15 @@ export LANG=ja_JP.UTF-8
 #computerArchitecture
 export PATH=$PATH:/Users/carch/bin
 
-# settings for go
+# goの設定
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# pyenvの設定
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # 色を使用出来るようにする
 autoload -Uz colors
