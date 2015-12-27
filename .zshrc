@@ -76,6 +76,9 @@ compinit
 # 訂正
 setopt correct
 
+# 候補ハイライト
+zstyle ':completion:*:default' menu select=1
+
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
