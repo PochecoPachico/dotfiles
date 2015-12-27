@@ -1,9 +1,6 @@
 #license : MIT
 # http://mollifier.mit-license.org/
 
-# incr
-source .zsh/incr*.zsh
-
 # power line
 case ${OSTYPE} in
 	darwin*)
