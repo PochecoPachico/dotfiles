@@ -1,6 +1,27 @@
 #license : MIT
 # http://mollifier.mit-license.org/
 
+# antigen
+source ~/.zsh/antigen/antigen.zsh
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme robbyrussell
+
+# Tell antigen that you're done.
+antigen apply
+
 # power line
 case ${OSTYPE} in
 	darwin*)
@@ -54,9 +75,6 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # プロンプト
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
 PROMPT="%{${fg[yellow]}%}[%n@%m]%{${reset_color}%} %~
 %# "
 
@@ -69,7 +87,6 @@ zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
 # 補完
-# 補完機能を有効にする
 autoload -Uz compinit
 compinit
 
@@ -215,12 +232,10 @@ elif which xsel >/dev/null 2>&1 ; then
 	alias -g C='| xsel --input --clipboard'
 fi
 
-
-
 # OS 別の設定
 case ${OSTYPE} in
     darwin*)
-            # Mac
+      # Mac
 	    export CLICOLOR=1
 	    alias ls='ls -G -F'
 	    ;;
