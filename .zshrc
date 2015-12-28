@@ -33,17 +33,9 @@ export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-# pyenvの設定
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
-
-# emacs 風キーバインドにする
-bindkey -e
 
 # zsh起動時にtmux起動
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
@@ -170,7 +162,7 @@ case ${OSTYPE} in
 		# mac
 		alias webdir="cd /Applications/MAMP/htdocs/"
 		alias sim="../SimMips-0.5.5/SimMips -M ../SimMips-0.5.5/test/mem_mieru.txt "
-		alias brew="env PATH=${PATH//\/Users\/shioura\/Library\/Python\/2.7\/bin:/} brew "
+		alias brew="env PATH=${PATH//\/Users\/shioura\/Library\/Python\/2.7\/bin:/} brew  "
 		# gVim
 		alias gvim="open -a MacVim"
 		function peco-select-history() {
