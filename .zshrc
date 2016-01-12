@@ -41,7 +41,7 @@ autoload -Uz colors
 colors
 
 # zsh起動時にtmux起動
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+# [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
