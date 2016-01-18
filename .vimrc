@@ -21,7 +21,7 @@ set title
 set showmatch
 set hlsearch
 
-"バックスペースを空白、行末、行頭でも使用可能にする
+" バックスペースを空白、行末、行頭でも使用可能にする
 set backspace=indent,eol,start
 
 "回り込み
@@ -30,8 +30,8 @@ set whichwrap=b,s,[,],<,>
 "マウス操作を可能に
 set mouse=a
 
-"行番号ハイライト
-hi CursorLineNr term=bold   cterm=NONE ctermfg=228 ctermbg=NONE
+" 行番号ハイライト
+hi CursorLineNr term=bold cterm=NONE ctermfg=228 ctermbg=NONE
 
 " タブ設定
 set tabstop=2
