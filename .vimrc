@@ -66,9 +66,6 @@ inoremap <C-l> <Right>
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 "Unite
-"insert modeで開始
-let g:unite_enable_start_insert = 1
-
 "バッファ一覧
 noremap <C-P> :Unite buffer<CR>
 
