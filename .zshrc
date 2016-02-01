@@ -158,7 +158,7 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 
 #自分専用
-alias pi='ssh -Y -C pi@192.168.11.8'
+alias pi='ssh -Y -C pi@raspberrypi'
 
 # OS毎にalias変更
 case ${OSTYPE} in
