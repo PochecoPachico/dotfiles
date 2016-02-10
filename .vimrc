@@ -120,6 +120,13 @@ set noerrorbells
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
+" ファイルを閉じともundoを可能にする
+if has('persistent_undo')
+	set undodir=~/.vim/undo
+	set undofile
+endif
+	
+
 " power line
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
