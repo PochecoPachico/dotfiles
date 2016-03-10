@@ -165,7 +165,6 @@ case ${OSTYPE} in
 	darwin*)
 		# mac
 		alias webdir="cd /Applications/MAMP/htdocs/"
-		alias sim="../SimMips-0.5.5/SimMips -M ../SimMips-0.5.5/test/mem_mieru.txt "
 		alias brew="env PATH=${PATH//\/Users\/shioura\/Library\/Python\/2.7\/bin:/} brew  "
 		# gVim
 		alias gvim="open -a MacVim"
