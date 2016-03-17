@@ -118,6 +118,9 @@ let g:solarized_termcolors=256
 set visualbell t_vb=
 set noerrorbells
 
+
+" NERD Tree
+let NERDTreeShowHidden = 1
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " ファイルを閉じともundoを可能にする
