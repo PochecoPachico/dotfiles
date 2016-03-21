@@ -119,7 +119,7 @@ set visualbell t_vb=
 set noerrorbells
 
 
-" NERD Tree
+" 隠しファイルをデフォルトで表示させる
 let NERDTreeShowHidden = 1
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
