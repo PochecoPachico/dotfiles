@@ -15,4 +15,4 @@ git submodule update
 
 cd ../
 
-echo "Finished!\nYou have to install silversearcher-ag, powerline, and get powerline fonts.\nDon't forget to compile vimproc after update NeoBundle plugins.\nCaution! tmux settings are available since version 2.0"
+echo "Finished!\nYou have to install silversearcher-ag, virtualenv, powerline, and get powerline fonts.\nDon't forget to compile vimproc after update NeoBundle plugins.\nCaution! tmux settings are available since version 2.0"
