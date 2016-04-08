@@ -41,6 +41,16 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
+" 方向キーを使えないようにする
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
 " タブ移動
 nnoremap <Space>p :tabprevious<CR>
 nnoremap <Space>n :tabnext<CR>
