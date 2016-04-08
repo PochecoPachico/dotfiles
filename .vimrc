@@ -9,7 +9,8 @@ if has('vim_starting')
 	NeoBundle 'scrooloose/nerdtree'
 	NeoBundle 'Shougo/unite.vim'
 	NeoBundle 'Shougo/neomru.vim'
-	NeoBundle "Shougo/vimproc" 
+	NeoBundle "Shougo/vimproc"
+	NeoBundle 'tpope/vim-fugitive'
 	call neobundle#end()
 endif
  
