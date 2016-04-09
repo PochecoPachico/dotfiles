@@ -29,9 +29,6 @@ export LANG=ja_JP.UTF-8
 # MySQL
 # export PATH=$PATH:/Applications/MAMP/Library/bin
 
-#computerArchitecture
-export PATH=$PATH:/Users/carch/bin
-
 # goの設定
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME
