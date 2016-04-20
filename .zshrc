@@ -180,7 +180,6 @@ case ${OSTYPE} in
 		}
 		zle -N peco-select-history
 		bindkey '^r' peco-select-history
-		alias ssh=~/bin/ssh-host-color
 		;;
 	linux*)
 		# linux
