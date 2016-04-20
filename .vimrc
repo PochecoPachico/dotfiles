@@ -11,6 +11,7 @@ if has('vim_starting')
 	NeoBundle 'Shougo/neomru.vim'
 	NeoBundle "Shougo/vimproc"
 	NeoBundle 'tpope/vim-fugitive'
+	NeoBundle 'mattn/emmet-vim'
 	call neobundle#end()
 endif
  
