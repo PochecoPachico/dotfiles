@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim
+  set runtimepath+=~/.vim/bundle/neobundle.vim
 	call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
 	"insert here your Neobundle plugins"
@@ -32,6 +32,9 @@ set whichwrap=b,s,[,],<,>
 
 " 行番号ハイライト
 hi CursorLineNr term=bold cterm=NONE ctermfg=228 ctermbg=NONE
+
+" スクロールに余裕を
+set scrolloff=3
 
 " タブ設定
 set tabstop=2
