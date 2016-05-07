@@ -1,6 +1,7 @@
 .vim/bundle/*
 .vim/bundle/.neobundle/*
 .vim/.netrwhist
+!.vim/bundle/neobundle.vim
 .vim/undo/*
 !.gitkeep
 *.swp
