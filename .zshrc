@@ -30,6 +30,11 @@ export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+# pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+
+eval "$(pyenv init -)"
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
