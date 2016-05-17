@@ -14,12 +14,6 @@ case ${OSTYPE} in
 		;;
 esac
 
-# virtualenvsの設定
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 #色設定
 if [[ $TERM = xterm ]]; then
 	TERM=xterm-256color
