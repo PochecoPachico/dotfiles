@@ -160,8 +160,11 @@ case ${OSTYPE} in
 	darwin*)
 		# mac
 		alias webdir="cd /Applications/MAMP/htdocs/"
-		alias brew="env PATH=${PATH//\/Users\/shioura\/Library\/Python\/2.7\/bin:/} brew  "
-		# gVim
+		# brew実行時のPATH
+		export BREW_EXECUTE_PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Users/shioura/bin:
+
+		alias brew="env PATH=$BREW_EXECUTE_PATH brew "
+			# gVim
 		alias gvim="open -a MacVim"
 		function peco-select-history() {
     			local tac
