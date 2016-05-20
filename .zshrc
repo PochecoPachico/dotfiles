@@ -3,7 +3,10 @@
 
 # power line
 case ${OSTYPE} in
-	darwin*)
+	darwin*)	
+		export LC_ALL=en_US.UTF-8
+		export LANG=en_US.UTF-8
+	
 		# mac
 		export PATH=$PATH:~/Library/Python/2.7/bin
     		powerline-daemon -q
