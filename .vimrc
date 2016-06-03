@@ -156,7 +156,7 @@ set noshowmode
 if has("gui_macvim")
 	set columns=110
 	set lines=40
-	set guifont=Ubuntu\ Mono\ derivative\ Powerline:h14
+	set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
 else
 	" gVim
 	if has('gui_running')

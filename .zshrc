@@ -152,9 +152,10 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias la='ls -a'
 alias ll='ls -l'
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -i -v'
+alias cp='cp -i -v'
+alias mv='mv -i -v'
+alias chmod='chmod -v'
 
 alias mkdir='mkdir -p'
 
@@ -221,3 +222,5 @@ case ${OSTYPE} in
 esac
 
  #vim:set ft=zsh:
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
