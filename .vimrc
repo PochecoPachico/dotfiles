@@ -12,6 +12,9 @@ if has('vim_starting')
 	NeoBundle "Shougo/vimproc"
 	NeoBundle 'tpope/vim-fugitive'
 	NeoBundle 'mattn/emmet-vim'
+	NeoBundle 'plasticboy/vim-markdown'
+	NeoBundle 'kannokanno/previm'
+	NeoBundle 'tyru/open-browser.vim'
 	call neobundle#end()
 endif
  
@@ -41,6 +44,9 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
+"
+" マークダウン md拡張子に対応
+au BufRead,BufNewFile *.md set filetype=markdown
 
 " 方向キーを使えないようにする
 " noremap <Up> <Nop>
