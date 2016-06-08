@@ -161,6 +161,18 @@ set laststatus=2
 set showtabline=2
 set noshowmode
 
+" vimを半透明にする
+if !has('gui_running')
+    augroup seiya
+        autocmd!
+        autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
+        autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=none
+        autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=none
+        autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=none
+        autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none
+    augroup END
+endif
+
 " MacVim
 if has("gui_macvim")
 	set columns=110
