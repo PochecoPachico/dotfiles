@@ -134,9 +134,9 @@ endif
 
 "色設定 
 syntax enable
-" set background=dark
+set background=dark
 colorscheme solarized
-let g:solarized_termcolors=256
+call togglebg#map('<F5>')
 
 "音設定
 set visualbell t_vb=
