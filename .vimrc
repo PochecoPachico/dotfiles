@@ -45,8 +45,11 @@ set shiftwidth=2
 set autoindent
 set smartindent
 "
-" マークダウン md拡張子に対応
+" markdown md拡張子に対応
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" markdown 折りたたみなし
+let g:vim_markdown_folding_disabled=1
 
 " 方向キーを使えないようにする
 noremap <Up> <Nop>
