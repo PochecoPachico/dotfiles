@@ -134,7 +134,7 @@ endif
 
 "色設定 
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 call togglebg#map('<F5>')
 
