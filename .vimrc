@@ -74,9 +74,6 @@ set fileencodings=utf-8,cp932
 "ヤンクした内容をクリップボードへ
 set clipboard+=unnamedplus,unnamed
 
-" マウス操作
-set mouse=a
-
 "キーマップ変更
 inoremap kj <ESC>
 
