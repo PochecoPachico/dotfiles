@@ -3,6 +3,7 @@
 .vim/.netrwhist
 !.vim/bundle/neobundle.vim
 .vim/undo/*
+.vim/colors/*
 !.gitkeep
 *.swp
 
