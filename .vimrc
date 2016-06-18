@@ -1,6 +1,9 @@
+" vi互換モード
 set nocompatible
+" filetype無効化
 filetype off
 
+" NeoBundle
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
 	call neobundle#begin(expand('~/.vim/bundle/'))
@@ -15,9 +18,11 @@ if has('vim_starting')
 	NeoBundle 'plasticboy/vim-markdown'
 	NeoBundle 'kannokanno/previm'
 	NeoBundle 'tyru/open-browser.vim'
+	NeoBundle 'altercation/vim-colors-solarized'
 	call neobundle#end()
 endif
- 
+
+" ファイル形式別インデントのロードを有効化
 filetype plugin indent on
 
 set number
@@ -44,7 +49,23 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
-"
+
+"色設定 
+syntax enable
+set background=dark
+colorscheme solarized
+call togglebg#map('<F5>')
+
+"音設定
+set visualbell t_vb=
+set noerrorbells
+
+" ファイルを閉じともundoを可能にする
+if has('persistent_undo')
+	set undodir=~/.vim/undo
+	set undofile
+endif
+
 " markdown md拡張子に対応
 au BufRead,BufNewFile *.md set filetype=markdown
 
@@ -71,10 +92,10 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,cp932
 
-"ヤンクした内容をクリップボードへ
+" ヤンクした内容をクリップボードへ
 set clipboard+=unnamedplus,unnamed
 
-"キーマップ変更
+" キーマップ変更
 inoremap kj <ESC>
 
 " insertモードでカーソル移動
@@ -129,27 +150,9 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
-"色設定 
-syntax enable
-set background=dark
-colorscheme solarized
-call togglebg#map('<F5>')
-
-"音設定
-set visualbell t_vb=
-set noerrorbells
-
-
 " 隠しファイルをデフォルトで表示させる
 let NERDTreeShowHidden = 1
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
-" ファイルを閉じともundoを可能にする
-if has('persistent_undo')
-	set undodir=~/.vim/undo
-	set undofile
-endif
-	
 
 " power line
 " for arch linux
