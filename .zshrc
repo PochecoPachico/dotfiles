@@ -25,9 +25,6 @@ fi
 # 環境変数
 export LANG=ja_JP.UTF-8
 
-# MySQL
-# export PATH=$PATH:/Applications/MAMP/Library/bin
-
 # goの設定
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME
@@ -41,9 +38,6 @@ eval "$(pyenv init -)"
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
-
-# zsh起動時にtmux起動
-# [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
