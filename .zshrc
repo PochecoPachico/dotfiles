@@ -153,6 +153,8 @@ alias chmod='chmod -v'
 
 alias mkdir='mkdir -p'
 
+alias vi='vim -u NONE --noplugin'
+
 # OS毎にalias変更
 case ${OSTYPE} in
 	darwin*)
