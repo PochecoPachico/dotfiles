@@ -1,0 +1,26 @@
+" Vi互換モード
+set nocompatible
+" filetype無効化
+filetype off
+
+set number
+set cursorline
+set cursorcolumn
+set title
+set showmatch
+set hlsearch
+
+" キーマップ変更
+inoremap kj <ESC>
+
+" タブ設定
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
+
+"色設定 
+syntax enable
+set background=dark
+colorscheme solarized
+

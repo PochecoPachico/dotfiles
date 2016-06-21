@@ -154,6 +154,7 @@ alias chmod='chmod -v'
 alias mkdir='mkdir -p'
 
 alias vi='vim -u NONE --noplugin'
+alias lvi="vim -u $HOME/.vimrc_light"
 
 # OS毎にalias変更
 case ${OSTYPE} in
