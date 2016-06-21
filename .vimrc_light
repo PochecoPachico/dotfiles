@@ -4,8 +4,6 @@ set nocompatible
 filetype off
 
 set number
-set cursorline
-set cursorcolumn
 set title
 set showmatch
 set hlsearch
@@ -18,9 +16,6 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
-
-"色設定 
-syntax enable
-set background=dark
-colorscheme solarized
-
+"
+" ファイル形式別インデントのロードを有効化
+filetype plugin indent on
