@@ -1,5 +1,3 @@
-" vi互換モード
-set nocompatible
 " filetype無効化
 filetype off
 
