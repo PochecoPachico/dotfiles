@@ -17,6 +17,7 @@ if has('vim_starting')
 	NeoBundle 'kannokanno/previm'
 	NeoBundle 'tyru/open-browser.vim'
 	NeoBundle 'altercation/vim-colors-solarized'
+	NeoBundle 'itchyny/lightline.vim'
 	call neobundle#end()
 endif
 
@@ -152,16 +153,11 @@ endif
 let NERDTreeShowHidden = 1
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-" power line
-" for arch linux
-let $PYTHONPATH='/usr/lib/python3.5/site-packages/'
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" light line
 set laststatus=2
 set showtabline=2
 set noshowmode
-
+ 
 " vimを半透明にする
 if !has('gui_running')
     augroup seiya
