@@ -197,10 +197,12 @@ case ${OSTYPE} in
 	    ;;
     linux*)
 	    # Linux
-			# goの設定
 	    alias ls='ls -F --color=auto'
+			# goの設定
 			export GOROOT=/usr/local/go
 			export GOPATH=$HOME/go
+			# ssh接続した時にローカルの環境変数がリモートに送信されるのでその対処
+			export LC_ALL=en_US.UTF-8
 			export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 			peco-select-history() {
 				declare l=$(HISTTIMEFORMAT= history | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$READLINE_LINE")
