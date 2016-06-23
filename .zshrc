@@ -1,22 +1,6 @@
 #license : MIT
 # http://mollifier.mit-license.org/
 
-# power line
-case ${OSTYPE} in
-	darwin*)	
-		export LC_ALL=en_US.UTF-8
-		export LANG=en_US.UTF-8
-	
-		# mac
-		export PATH=$PATH:~/Library/Python/2.7/bin
-    		powerline-daemon -q
-    		. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
-		;;
-	linux*)
-		# linux 色設定
-		;;
-esac
-
 #色設定
 if [[ $TERM = xterm ]]; then
 	TERM=xterm-256color
