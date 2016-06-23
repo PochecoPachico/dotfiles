@@ -197,6 +197,7 @@ case ${OSTYPE} in
 	    ;;
     linux*)
 	    # Linux
+			# goの設定
 	    alias ls='ls -F --color=auto'
 			export GOROOT=/usr/local/go
 			export GOPATH=$HOME/go
@@ -206,8 +207,9 @@ case ${OSTYPE} in
 				READLINE_LINE="$l"
 				READLINE_POINT=${#l}
 			}
-			bind -x '"\C-r": peco-select-history'
-			bind    '"\C-xr": reverse-search-history'
+			# bindkey -x '"\C-r": peco-select-history'
+			zle -N peco-select-history
+			bindkey '^r' peco-select-history
 	    ;;
 esac
 
