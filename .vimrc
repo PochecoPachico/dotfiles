@@ -7,38 +7,97 @@ if has('vim_starting')
 	call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
 	"insert here your Neobundle plugins"
-	NeoBundle 'scrooloose/nerdtree'
 	NeoBundle 'Shougo/unite.vim'
 	NeoBundle 'Shougo/neomru.vim'
 	NeoBundle "Shougo/vimproc"
+	NeoBundle 'Shougo/vimfiler'
+	" git
 	NeoBundle 'tpope/vim-fugitive'
+	" html
 	NeoBundle 'mattn/emmet-vim'
+	" markdown
 	NeoBundle 'plasticboy/vim-markdown'
 	NeoBundle 'kannokanno/previm'
 	NeoBundle 'tyru/open-browser.vim'
+	" color scheme
 	NeoBundle 'altercation/vim-colors-solarized'
+	" light line
 	NeoBundle 'itchyny/lightline.vim'
 	call neobundle#end()
 endif
 
-" ファイル形式別インデントのロードを有効化
-filetype plugin indent on
+""""" プラグイン """""
+" Unite
+" バッファ一覧
+noremap <C-P> :Unite buffer<CR>
 
+" ファイル一覧
+noremap <C-N> :Unite -buffer-name=file file<CR>
+
+" 最近使ったファイルの一覧
+noremap <C-Z> :Unite file_mru<CR>
+
+" sourcesを今開いているファイルのディレクトリとする
+noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+
+" ウィンドウを分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+
+" ESCキーを2回押すと終了する
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+" 大文字小文字を区別しない
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+
+" grep検索
+nnoremap <silent> <C-g>  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+"カーソル位置の単語をgrep検索
+nnoremap <silent> <C-c> :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" grep検索結果の再呼出
+nnoremap <silent> <C-r>  :<C-u>UniteResume search-buffer<CR>
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
+" VimFiler
+let g:vimfiler_as_default_explorer = 1
+
+let g:vimfiler_tree_leaf_icon = ' '
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
+let g:vimfiler_file_icon = '-'
+let g:vimfiler_marked_file_icon = '*'
+
+" light line
+set laststatus=2
+set showtabline=2
+set noshowmode
+ 
+""""" 環境設定 """""
 set number
 set cursorline
 set cursorcolumn
 set title
 set showmatch
 set hlsearch
+set noswapfile
 
 " バックスペースを空白、行末、行頭でも使用可能にする
 set backspace=indent,eol,start
 
 "回り込み
 set whichwrap=b,s,[,],<,>
-
-" 行番号ハイライト
-hi CursorLineNr term=bold cterm=NONE ctermfg=228 ctermbg=NONE
 
 " スクロールに余裕を
 set scrolloff=3
@@ -49,7 +108,7 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
-"色設定 
+" 色設定 
 syntax enable
 set background=dark
 colorscheme solarized
@@ -106,69 +165,20 @@ inoremap <C-l> <Right>
 "検索ハイライトを消す
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
-"Unite
-"バッファ一覧
-noremap <C-P> :Unite buffer<CR>
-
-"ファイル一覧
-noremap <C-N> :Unite -buffer-name=file file<CR>
-
-"最近使ったファイルの一覧
-noremap <C-Z> :Unite file_mru<CR>
-
-"sourcesを今開いているファイルのディレクトリとする
-noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-
-"ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-
-"ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-
-"ESCキーを2回押すと終了する
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-
-" 大文字小文字を区別しない
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
-
-" grep検索
-nnoremap <silent> <C-g>  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-"カーソル位置の単語をgrep検索
-nnoremap <silent> <C-c> :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-"grep検索結果の再呼出
-nnoremap <silent> <C-r>  :<C-u>UniteResume search-buffer<CR>
-
-" unite grep に ag(The Silver Searcher) を使う
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-
-" 隠しファイルをデフォルトで表示させる
-let NERDTreeShowHidden = 1
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
-" light line
-set laststatus=2
-set showtabline=2
-set noshowmode
- 
 " vimを半透明にする
 if !has('gui_running')
-    augroup seiya
-        autocmd!
-        autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
-        autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=none
-        autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=none
-        autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=none
-        autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none
-    augroup END
+	augroup seiya
+		autocmd!
+		autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
+		autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=none
+		autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=none
+		autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=none
+		autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none
+	augroup END
 endif
+
+" ファイル形式別インデントのロードを有効化
+filetype plugin indent on
 
 " MacVim
 if has("gui_macvim")
