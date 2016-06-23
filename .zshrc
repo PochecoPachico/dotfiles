@@ -67,8 +67,8 @@ zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 
 function _update_vcs_info_msg() {
-	    LANG=en_US.UTF-8 vcs_info
-	        RPROMPT="${vcs_info_msg_0_}"
+	LANG=en_US.UTF-8 vcs_info
+	RPROMPT="${vcs_info_msg_0_}"
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
@@ -121,7 +121,6 @@ export CLICOLOR=true
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # エイリアス
-
 alias la='ls -a'
 alias ll='ls -l'
 
@@ -138,17 +137,20 @@ alias lvi="vim -u $HOME/.vimrc_light"
 # OS毎にalias変更
 case ${OSTYPE} in
 	darwin*)
-		# mac
+		# Mac
 		alias webdir="cd /Applications/MAMP/htdocs/"
 		# brew実行時のPATH
 		export BREW_EXECUTE_PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Users/shioura/bin:
-
 		alias brew="env PATH=$BREW_EXECUTE_PATH brew "
+
 		# gVim
 		alias gvim="open -a MacVim"
-				;;
+		export CLICOLOR=1
+		alias ls='ls -G -F'
+	;;
 	linux*)
-		# linux
+	# linux
+		alias ls='ls -F --color=auto'
 		;;
 esac
 
@@ -171,48 +173,37 @@ fi
 
 # OS別の設定
 case ${OSTYPE} in
-    darwin*)
-      # Mac
-	    export CLICOLOR=1
-	    alias ls='ls -G -F'
-			# goの設定
-			export GOROOT=/usr/local/opt/go/libexec
-			export GOPATH=$HOME
-			export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-			function peco-select-history() {
-				local tac
-				if which tac > /dev/null; then
-        			tac="tac"
-				else
-						tac="tail -r"
-				fi
-				BUFFER=$(\history -n 1 | \
-					eval $tac | \
-					peco --query "$LBUFFER")
-				CURSOR=$#BUFFER
-				zle clear-screen
-			}
-			zle -N peco-select-history
-			bindkey '^r' peco-select-history
-	    ;;
-    linux*)
-	    # Linux
-	    alias ls='ls -F --color=auto'
-			# goの設定
-			export GOROOT=/usr/local/go
-			export GOPATH=$HOME/go
-			# ssh接続した時にローカルの環境変数がリモートに送信されるのでその対処
-			export LC_ALL=en_US.UTF-8
-			export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-			peco-select-history() {
-				declare l=$(HISTTIMEFORMAT= history | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$READLINE_LINE")
-				READLINE_LINE="$l"
-				READLINE_POINT=${#l}
-			}
-			# bindkey -x '"\C-r": peco-select-history'
-			zle -N peco-select-history
-			bindkey '^r' peco-select-history
-	    ;;
+	darwin*)
+		# Mac
+		export GOROOT=/usr/local/opt/go/libexec
+		export GOPATH=$HOME
+		export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+	;;
+	linux*)
+		# Linux
+		export GOROOT=/usr/local/go
+		export GOPATH=$HOME/go
+		# ssh接続した時にローカルの環境変数がリモートに送信されるのでその対処
+		export LC_ALL=en_US.UTF-8
+		export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+	;;
 esac
+
+# 履歴検索
+function peco-select-history() {
+	local tac
+	if which tac > /dev/null; then
+		tac="tac"
+	else
+		tac="tail -r"
+	fi
+	BUFFER=$(\history -n 1 | \
+	eval $tac | \
+	peco --query "$LBUFFER")
+	CURSOR=$#BUFFER
+	zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
