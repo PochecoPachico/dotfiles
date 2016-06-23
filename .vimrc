@@ -78,11 +78,6 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
-
-" light line
-set laststatus=2
-set showtabline=2
-set noshowmode
  
 """"" 環境設定 """""
 set number
@@ -92,6 +87,9 @@ set title
 set showmatch
 set hlsearch
 set noswapfile
+set laststatus=2
+set showtabline=2
+set noshowmode
 
 " バックスペースを空白、行末、行頭でも使用可能にする
 set backspace=indent,eol,start

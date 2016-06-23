@@ -7,6 +7,7 @@ set number
 set title
 set showmatch
 set hlsearch
+set showtabline=2
 
 " キーマップ変更
 inoremap kj <ESC>
