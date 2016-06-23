@@ -9,11 +9,6 @@ fi
 # 環境変数
 export LANG=ja_JP.UTF-8
 
-# goの設定
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
 # pyenv
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
@@ -149,24 +144,9 @@ case ${OSTYPE} in
 		export BREW_EXECUTE_PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Users/shioura/bin:
 
 		alias brew="env PATH=$BREW_EXECUTE_PATH brew "
-			# gVim
+		# gVim
 		alias gvim="open -a MacVim"
-		function peco-select-history() {
-    			local tac
-    			if which tac > /dev/null; then
-        			tac="tac"
-   			else
-        			tac="tail -r"
-    			fi
-    			BUFFER=$(\history -n 1 | \
-        		eval $tac | \
-        		peco --query "$LBUFFER")
-    			CURSOR=$#BUFFER
-    			zle clear-screen
-		}
-		zle -N peco-select-history
-		bindkey '^r' peco-select-history
-		;;
+				;;
 	linux*)
 		# linux
 		;;
@@ -189,16 +169,45 @@ elif which xsel >/dev/null 2>&1 ; then
 	alias -g C='| xsel --input --clipboard'
 fi
 
-# OS 別の設定
+# OS別の設定
 case ${OSTYPE} in
     darwin*)
       # Mac
 	    export CLICOLOR=1
 	    alias ls='ls -G -F'
+			# goの設定
+			export GOROOT=/usr/local/opt/go/libexec
+			export GOPATH=$HOME
+			export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+			function peco-select-history() {
+				local tac
+				if which tac > /dev/null; then
+        			tac="tac"
+				else
+						tac="tail -r"
+				fi
+				BUFFER=$(\history -n 1 | \
+					eval $tac | \
+					peco --query "$LBUFFER")
+				CURSOR=$#BUFFER
+				zle clear-screen
+			}
+			zle -N peco-select-history
+			bindkey '^r' peco-select-history
 	    ;;
     linux*)
 	    # Linux
 	    alias ls='ls -F --color=auto'
+			export GOROOT=/usr/local/go
+			export GOPATH=$HOME/go
+			export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+			peco-select-history() {
+				declare l=$(HISTTIMEFORMAT= history | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\s*//; $in=$_; if (!(grep {$in eq $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$READLINE_LINE")
+    READLINE_LINE="$l"
+    READLINE_POINT=${#l}
+			}
+		bind -x '"\C-r": peco-select-history'
+		bind    '"\C-xr": reverse-search-history'
 	    ;;
 esac
 
