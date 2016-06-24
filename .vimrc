@@ -98,15 +98,15 @@ let g:lightline = {
       \   ]
 			\	},
 			\	'component_function': {
-			\ 	'fugitive': 'MyFugitive',
+			\ 	'fugitive': 'DispBranch',
 			\ },
       \ }
 
-function! MyFugitive()
+function! DispBranch()
   try
     if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
       let _ = fugitive#head()
-      return strlen(_) ? ''._ : ''
+      return strlen(_) ? _ : ''
     endif
   catch
   endtry
