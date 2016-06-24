@@ -24,8 +24,10 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # プロンプト
-PROMPT="%{${fg[yellow]}%}[%n@%m]%{${reset_color}%} %~
-%# "
+# ?: 直前のコマンドの返り値
+# 失敗したら色を赤くする
+PROMPT="%F{yellow}[%n@%m]%f %~
+%(?,%#,%F{red}%#%f) "
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
@@ -57,7 +59,6 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
-
 
 # vcs_info
 autoload -Uz vcs_info
