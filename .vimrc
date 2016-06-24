@@ -91,7 +91,27 @@ let g:gitgutter_sign_removed = '-'
 " light line
 let g:lightline = {
       \ 'colorscheme': 'solarized',
+			\	'active': {
+      \   'left': [
+      \     ['mode', 'paste'],
+      \     ['fugitive'],
+      \   ]
+			\	},
+			\	'component_function': {
+			\ 	'fugitive': 'MyFugitive',
+			\ },
       \ }
+
+function! MyFugitive()
+  try
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+      let _ = fugitive#head()
+      return strlen(_) ? ''._ : ''
+    endif
+  catch
+  endtry
+  return ''
+endfunction
 
 """"" 環境設定 """""
 set number
