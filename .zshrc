@@ -64,7 +64,10 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 
-zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!%f"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+%f"
+zstyle ':vcs_info:*' formats '%c%u%F{green}(%s)-[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 
 function _update_vcs_info_msg() {
@@ -150,7 +153,7 @@ case ${OSTYPE} in
 		alias ls='ls -G -F'
 	;;
 	linux*)
-	# linux
+		# linux
 		alias ls='ls -F --color=auto'
 		;;
 esac
