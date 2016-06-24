@@ -13,6 +13,7 @@ if has('vim_starting')
 	NeoBundle 'Shougo/vimfiler'
 	" git
 	NeoBundle 'tpope/vim-fugitive'
+	NeoBundle 'airblade/vim-gitgutter'
 	" html
 	NeoBundle 'mattn/emmet-vim'
 	" markdown
@@ -78,7 +79,17 @@ let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
- 
+
+" vim-gitgutter
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '*'
+let g:gitgutter_sign_removed = '-'
+
+" light line
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
 """"" 環境設定 """""
 set number
 set cursorline
