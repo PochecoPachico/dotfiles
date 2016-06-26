@@ -24,7 +24,8 @@ make
 ```
 
 ### 3. pyenvのインストール
-OSによって異なるので調べてください…
+OSによって異なるので調べてください…  
+参考サイト: [Qiita | データサイエンティストを目指す人のpython環境構築 2016](http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c)
 
 ### 4. silversearcherインストール
 Mac  
