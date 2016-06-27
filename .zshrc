@@ -13,7 +13,9 @@ export LANG=ja_JP.UTF-8
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 
-test -e "$PYENV_ROOT/bin/pyenv"; eval "$(pyenv init -)"
+if test -e "$PYENV_ROOT/bin/pyenv";  then
+	eval "$(pyenv init -)"
+fi
 
 # 色を使用出来るようにする
 autoload -Uz colors
