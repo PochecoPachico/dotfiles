@@ -13,7 +13,8 @@ export LANG=ja_JP.UTF-8
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 
-eval "$(pyenv init -)"
+test -e "$PYENV_ROOT/bin/pyenv"; eval "$(pyenv init -)"
+
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
@@ -175,7 +176,7 @@ elif which xsel >/dev/null 2>&1 ; then
 	alias -g C='| xsel --input --clipboard'
 fi
 
-# OS別の設定
+# OS別の設定(peco)
 case ${OSTYPE} in
 	darwin*)
 		# Mac
@@ -207,5 +208,3 @@ function peco-select-history() {
 	CURSOR=$#BUFFER
 	zle clear-screen
 }
-zle -N peco-select-history
-bindkey '^r' peco-select-history

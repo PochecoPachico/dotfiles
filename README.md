@@ -1,4 +1,4 @@
-# dotfilesの環境設定(2016年6月25日更新)
+# dotfilesの環境設定(2016年6月27日更新)
 
 備忘録  
 Mac，Ubuntu，Arch Linuxでうまく動くはず
@@ -25,16 +25,15 @@ make
 
 ### 3. pyenvのインストール
 OSによって異なるので調べてください…  
-参考サイト: [Qiita | データサイエンティストを目指す人のpython環境構築 2016](http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c)
+参考サイト: [Qiita | データサイエンティストを目指す人のpython環境構築 2016](http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c)  
+インストールしなくてもエラーは出ないけど…
 
 ### 4. silversearcherインストール
 Mac  
 `brew install the_silver_searcher`  
 Ubuntu  
 `sudo apt-get install silversearcher-ag`  
-基本的にOSのパッケージ管理で入れられるみたい
-
-
+基本的にOSのパッケージ管理で入れられるみたい  
 
 ### 5. pecoのインストール
 pecoをインストールする前にgoを入れる必要があります  
