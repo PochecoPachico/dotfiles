@@ -8,6 +8,7 @@ set title
 set showmatch
 set hlsearch
 set showtabline=2
+set backspace=indent,eol,start
 
 " キーマップ変更
 inoremap kj <ESC>
