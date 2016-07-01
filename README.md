@@ -3,6 +3,10 @@
 備忘録  
 Mac，Ubuntu，Arch Linuxでうまく動くはず
 
+## clone方法  
+ホームディレクトリで  
+`git clone https://proteanFrog@bitbucket.org/proteanFrog/dotfiles .dotfiles`  
+を実行する
 ## 必須
 ### 1. install.shを実行する  
 実行するとgit submoduleでNeoBundleがインストールされ，以下の設定ファイルのシンボリックリンクが作成される
