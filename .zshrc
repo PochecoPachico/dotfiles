@@ -13,7 +13,7 @@ export LANG=ja_JP.UTF-8
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 
-if test -e "$PYENV_ROOT/bin/pyenv" -o test -e "$PYENV_ROOT/shims";  then
+if test -e "$PYENV_ROOT/bin/pyenv" || test -e "$PYENV_ROOT/shims";  then
 	eval "$(pyenv init -)"
 fi
 
@@ -29,8 +29,13 @@ SAVEHIST=1000000
 # プロンプト
 # ?: 直前のコマンドの返り値
 # 失敗したら色を赤くする
-PROMPT="%F{yellow}[%n@%m]%f %~
+if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} = "undefined" ]; then 
+	PROMPT="%F{yellow}[%n@%m]%f %~
 %(?,%#,%F{red}%#%f) "
+else 
+	PROMPT="%F{green}[%n@%m]%f %~
+%(?,%#,%F{red}%#%f) "
+fi
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
