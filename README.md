@@ -1,4 +1,4 @@
-# dotfilesの環境設定(2016年6月27日更新)
+# dotfilesの環境設定(2016年7月24日更新)
 
 備忘録  
 Mac，Ubuntu，Arch Linuxでうまく動くはず
@@ -52,6 +52,8 @@ Linuxは公式からtarを落としてきてgoをインストール
 `git clone https://github.com/powerline/fonts`
 
 カラースキームはsolarizedにしたほうが見栄えが良くなります
+
+あとgitbucket用の公開鍵をパスワード無しで作ったほうがいいかも
 
 ## 注意
 tmuxのバージョンは2.0以上でないとうまく設定が反映されないみたい
