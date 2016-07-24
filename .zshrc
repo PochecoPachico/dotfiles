@@ -35,7 +35,7 @@ if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} =
 	PROMPT="%F{yellow}[%n@%m]%f %~
 %(?,%#,%F{red}%#%f) "
 else 
-	PROMPT="%F{red}[%n@%m]%f %~
+	PROMPT="%F{yellow}[%n@%m]%f%F{red}[Remote]%f %~
 %(?,%#,%F{red}%#%f) "
 fi
 
