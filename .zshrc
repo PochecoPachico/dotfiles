@@ -30,12 +30,12 @@ SAVEHIST=1000000
 # ?: 直前のコマンドの返り値
 # 失敗したら色を赤くする
 
-# sshで接続されている時は[Remote]と赤文字で表示されるようにする
+# sshで接続されている時は[REMOTE]と赤文字で表示されるようにする
 if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} = "undefined" ]; then 
 	PROMPT="%F{yellow}[%n@%m]%f %~
 %(?,%#,%F{red}%#%f) "
 else 
-	PROMPT="%F{yellow}[%n@%m]%f%F{red}[Remote]%f %~
+	PROMPT="%F{yellow}[%n@%m]%f%F{red}[REMOTE]%f %~
 %(?,%#,%F{red}%#%f) "
 fi
 
