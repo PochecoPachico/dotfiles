@@ -222,7 +222,7 @@ else
 	if has('gui_running')
 		set columns=100
 		set lines=40
-		set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 15
+		set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
 	endif
 endif
 
