@@ -142,11 +142,21 @@ alias rm='rm -i -v'
 alias cp='cp -i -v'
 alias mv='mv -i -v'
 alias chmod='chmod -v'
-
 alias mkdir='mkdir -p'
+alias pd='popd'
+alias relogin='exec $SHELL'
 
 alias vi='vim -u NONE --noplugin'
 alias lvi="vim -u $HOME/.vimrc_light"
+
+# gitのエイリアス
+alias gst='git status'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gco='git checkout'
+alias ggpull='git pull origin $(current_branch)'
+alias ggpush='git push origin $(current_branch)'
 
 # OS毎にalias変更
 case ${OSTYPE} in
