@@ -135,7 +135,7 @@ export CLICOLOR=true
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # エイリアス
-source .dotfiles/.zsh_aliases
+source ~/.dotfiles/.zsh_aliases
 
 # OS別の設定(peco)
 case ${OSTYPE} in
