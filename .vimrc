@@ -3,7 +3,7 @@ filetype off
 
 " NeoBundle
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
+	set runtimepath+=~/.vim/bundle/neobundle.vim
 	call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
 	"insert here your Neobundle plugins"
@@ -66,9 +66,9 @@ nnoremap <silent> <C-r>  :<C-u>UniteResume search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
+	let g:unite_source_grep_command = 'ag'
+	let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+	let g:unite_source_grep_recursive_opt = ''
 endif
 
 " VimFiler
@@ -90,27 +90,27 @@ let g:gitgutter_sign_removed = '-'
 
 " light line
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
-			\	'active': {
-      \   'left': [
-      \     ['mode', 'paste'],
-      \     ['fugitive'],
-      \   ]
-			\	},
-			\	'component_function': {
-			\ 	'fugitive': 'DispBranch',
-			\ },
-      \ }
+	\ 'colorscheme': 'solarized',
+	\	'active': {
+	\ 	'left': [
+	\ 		['mode', 'paste'],
+	\			['fugitive'],
+	\   ]
+	\ 	},
+	\		'component_function': {
+	\ 		'fugitive': 'DispBranch',
+	\ 	},
+	\ }
 
 function! DispBranch()
-  try
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-      let _ = fugitive#head()
-      return strlen(_) ? _ : ''
-    endif
-  catch
-  endtry
-  return ''
+	try
+		if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+			let _ = fugitive#head()
+			return strlen(_) ? _ : ''
+		endif
+	catch
+	endtry
+	return ''
 endfunction
 
 """"" 環境設定 """""
