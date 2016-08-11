@@ -6,6 +6,11 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
+if [ -f "$1.cpp" ]; then
+	echo "Error: Duplicate file name"
+	exit 1
+fi
+
 cat << EOT  >> $1.cpp
 #define _USE_MATH_DEFINES
 #include <algorithm>
