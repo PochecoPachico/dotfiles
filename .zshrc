@@ -13,6 +13,9 @@ export LANG=ja_JP.UTF-8
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 
+# 自作シェルスクリプト
+export PATH=$HOME/.dotfiles/bin:$PATH
+
 if test -e "$PYENV_ROOT/bin/pyenv" || test -e "$PYENV_ROOT/shims";  then
 	eval "$(pyenv init -)"
 fi
