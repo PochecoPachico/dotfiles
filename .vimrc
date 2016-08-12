@@ -1,30 +1,38 @@
 " filetype無効化
 filetype off
 
-" NeoBundle
-if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim
-	call neobundle#begin(expand('~/.vim/bundle/'))
-	NeoBundleFetch 'Shougo/neobundle.vim'
-	"insert here your Neobundle plugins"
-	NeoBundle 'Shougo/unite.vim'
-	NeoBundle 'Shougo/neomru.vim'
-	NeoBundle "Shougo/vimproc"
-	NeoBundle 'Shougo/vimfiler'
-	" git
-	NeoBundle 'tpope/vim-fugitive'
-	NeoBundle 'airblade/vim-gitgutter'
-	" html
-	NeoBundle 'mattn/emmet-vim'
-	" markdown
-	NeoBundle 'plasticboy/vim-markdown'
-	NeoBundle 'kannokanno/previm'
-	NeoBundle 'tyru/open-browser.vim'
-	" color scheme
-	NeoBundle 'altercation/vim-colors-solarized'
-	" light line
-	NeoBundle 'itchyny/lightline.vim'
-	call neobundle#end()
+" プラグインが実際にインストールされるディレクトリ
+let s:dein_dir = expand('~/.vim/dein')
+" dein.vim 本体
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+" dein.vim がなければ github から落としてくる
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+" プラグインリストを収めた TOML ファイル
+" 予め TOML ファイル（後述）を用意しておく
+let g:rc_dir    = expand('~/.vim/rc')
+let s:toml_file      = g:rc_dir . '/dein.toml'
+
+" 設定開始
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir, [$MYVIMRC, s:toml_file])
+
+    " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml_file)
+
+  " 設定終了
+  call dein#end()
+  call dein#save_state()
+endif
+
+if has('vim_starting') && dein#check_install()
+  call dein#install()
 endif
 
 """"" プラグイン """""

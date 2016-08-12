@@ -1,9 +1,5 @@
-.vim/bundle/*
-.vim/bundle/.neobundle/*
-.vim/.netrwhist
-!.vim/bundle/neobundle.vim
+.vim/dein/*
 .vim/undo/*
-.vim/colors/*
 !.gitkeep
 *.swp
-
+.DS_Store
