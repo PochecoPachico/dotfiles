@@ -303,7 +303,6 @@ nnoremap <Space>c :tabnew<CR>
 
 "文字コード関連
 set encoding=utf-8
-set fileencoding=utf-8
 set fileencodings=utf-8,cp932
 
 " ヤンクした内容をクリップボードへ
