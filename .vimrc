@@ -97,8 +97,12 @@ let g:gitgutter_sign_modified = '*'
 let g:gitgutter_sign_removed = '-'
 
 " lightline
+if !has('gui_running')
+  set t_Co=256
+endif
+
 let g:lightline = {
-        \ 'colorscheme': 'default',
+        \ 'colorscheme': 'solarized',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [
@@ -131,7 +135,7 @@ function! MyModified()
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '[L]' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '[RO]' : ''
 endfunction
 
 function! MyFilename()
