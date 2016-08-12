@@ -131,7 +131,7 @@ function! MyModified()
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? 'Locked' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '[L]' : ''
 endfunction
 
 function! MyFilename()
@@ -225,16 +225,6 @@ function! MyCharCode()
   let nr = printf(nrformat, nr)
 
   return "'". char ."' ". nr
-endfunction
-function! DispBranch()
-	try
-		if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-			let _ = fugitive#head()
-			return strlen(_) ? _ : ''
-		endif
-	catch
-	endtry
-	return ''
 endfunction
 
 """"" 環境設定 """""

@@ -1,4 +1,4 @@
-# dotfilesの環境設定(2016年7月24日更新)
+# dotfilesの環境設定(2016年8月12日更新)
 
 備忘録  
 Mac，Ubuntu，Arch Linuxでうまく動くはず
@@ -9,7 +9,7 @@ Mac，Ubuntu，Arch Linuxでうまく動くはず
 を実行する
 ## 必須
 ### 1. install.shを実行する  
-実行するとgit submoduleでNeoBundleがインストールされ，以下の設定ファイルのシンボリックリンクが作成される
+実行すると以下の設定ファイルのシンボリックリンクが作成される
 
 ```
 .zshrc  
@@ -20,26 +20,19 @@ Mac，Ubuntu，Arch Linuxでうまく動くはず
 ```  
 .vimrc_lightは軽量版のvimの設定ファイルで必要最低限だと思われる設定が記述されている  
 
-### 2. vimprocコンパイル
-vimを起動し，NeoBundleInstallを実行してから以下のコマンドを実行する  
-```sh
-cd ~/.dotfiles/.vim/bundle/vimproc
-make
-```
-
-### 3. pyenvのインストール
+### 2. pyenvのインストール
 OSによって異なるので調べてください…  
 参考サイト: [Qiita | データサイエンティストを目指す人のpython環境構築 2016](http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c)  
 インストールしなくてもエラーは出ないけど…
 
-### 4. silversearcherインストール
+### 3. silversearcherインストール
 Mac  
 `brew install the_silver_searcher`  
 Ubuntu  
 `sudo apt-get install silversearcher-ag`  
 基本的にOSのパッケージ管理で入れられるみたい  
 
-### 5. pecoのインストール
+### 4. pecoのインストール
 pecoをインストールする前にgoを入れる必要があります  
 Macはbrewでインストールできます  
 `brew install go`  
