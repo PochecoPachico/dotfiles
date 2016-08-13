@@ -35,6 +35,9 @@ if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
+" duでプラグインのアップデート
+nmap du :call dein#update()<cr>
+
 """"" プラグイン """""
 " Unite
 " バッファ一覧
