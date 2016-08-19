@@ -1,7 +1,4 @@
 #!/bin/sh
-git submodule init
-git submodule update
-
 cd ../
 
 ln -s .dotfiles/.zshrc ./.zshrc
