@@ -36,10 +36,10 @@ SAVEHIST=1000000
 # sshで接続されている時は[REMOTE]と赤文字で表示されるようにする
 if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} = "undefined" ]; then 
 	PROMPT="%F{yellow}[%n@%m]%f %F{green}%~%f
-%(?,>>>,%F{red}>>>%f) "
+%(?,$,%F{red}$%f) "
 else 
 	PROMPT="%F{yellow}[%n@%m]%f%F{red}[REMOTE]%f %F{green}%~%f
-%(?,>>>,%F{red}>>>%f) "
+%(?,$,%F{red}$%f) "
 fi
 
 # 単語の区切り文字を指定する
