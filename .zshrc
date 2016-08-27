@@ -8,6 +8,7 @@ fi
 
 # 環境変数
 export LANG=ja_JP.UTF-8
+export LC_ALL='ja_JP.UTF-8'
 
 # pyenv
 export PYENV_ROOT=$HOME/.pyenv
