@@ -105,7 +105,7 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-        \ 'colorscheme': 'solarized',
+        \ 'colorscheme': 'default',
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [
