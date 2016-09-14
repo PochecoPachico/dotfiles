@@ -5,7 +5,7 @@ Mac，Ubuntu，Arch Linuxでうまく動くはず
 
 ## 設定方法  
 ホームディレクトリで  
-`git clone https://proteanFrog@bitbucket.org/proteanFrog/dotfiles .dotfiles`  
+`git clone https://PochecoPachico@bitbucket.org/PochecoPachico/dotfiles .dotfiles`  
 を実行する
 ### 必須
 #### 1. install.shを実行する  
