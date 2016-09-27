@@ -7,7 +7,7 @@ alias mv='mv -i -v'
 alias chmod='chmod -v'
 alias mkdir='mkdir -p'
 alias pd='popd'
-alias relogin="exec $SHELL"
+alias relogin="exec $SHELL -l"
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
