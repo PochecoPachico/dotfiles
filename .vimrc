@@ -246,6 +246,9 @@ set laststatus=2
 set showtabline=2
 set noshowmode
 
+" マウスの設定
+set mouse=a
+
 " バックスペースを空白、行末、行頭でも使用可能にする
 set backspace=indent,eol,start
 
