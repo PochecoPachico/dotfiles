@@ -301,6 +301,12 @@ nnoremap <Space>p :tabprevious<CR>
 nnoremap <Space>n :tabnext<CR>
 nnoremap <Space>c :tabnew<CR>
 
+" カッコ補完
+inoremap { {}<Left>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap ( ()<ESC>i
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
+
 "文字コード関連
 set encoding=utf-8
 set fileencodings=utf-8,cp932
