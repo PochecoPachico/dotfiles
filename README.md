@@ -1,4 +1,4 @@
-# dotfilesの環境設定(2016年9月13日更新)
+# dotfilesの環境設定(2016年10月11日更新)
 
 備忘録  
 Mac，Ubuntu，Arch Linuxでうまく動くはず
@@ -17,6 +17,7 @@ Mac，Ubuntu，Arch Linuxでうまく動くはず
 .vimrc  
 .vimrc_light  
 .vim  
+.atom  
 ```  
 .vimrc_lightは軽量版のvimの設定ファイルで必要最低限だと思われる設定が記述されている  
 
