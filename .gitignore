@@ -3,13 +3,14 @@
 *.swp
 .DS_Store
 
-.atom/.apm/
-.atom/.node-gyp/
-.atom/compile-cache/
+.atom/.apm/*
+.atom/.node-gyp/*
+.atom/compile-cache/*
 .atom/npm-debug.log
-.atom/packages/
-.atom/projects.cson
-.atom/storage/
+.atom/packages/*
+.atom/projects.cson/*
+.atom/storage/*
+.atom/blob-store/*
 
 .vim/dein/*
 .vim/undo/*
