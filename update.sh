@@ -1,4 +1,6 @@
 #!/bin/sh
 
 git pull origin master
-cd .atom/ && apm install --packages-file packagelist
+if [ `which apm` ]; then
+	cd .atom/ && apm install --packages-file packagelist
+fi
