@@ -1,5 +1,15 @@
-.vim/dein/*
-.vim/undo/*
 !.gitkeep
+
 *.swp
 .DS_Store
+
+.atom/.apm/
+.atom/.node-gyp/
+.atom/compile-cache/
+.atom/npm-debug.log
+.atom/packages/
+.atom/projects.cson
+.atom/storage/
+
+.vim/dein/*
+.vim/undo/*
