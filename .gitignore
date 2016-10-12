@@ -11,6 +11,7 @@
 .atom/projects.cson/*
 .atom/storage/*
 .atom/blob-store/*
+.atom/nohup.out
 
 .vim/dein/*
 .vim/undo/*
