@@ -4,6 +4,7 @@
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
+  editor: {}
   "exception-reporting":
     userId: "3db13b3d-fa19-0312-8bf5-595a9b57f701"
   welcome:
