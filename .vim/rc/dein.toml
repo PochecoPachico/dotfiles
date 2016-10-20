@@ -39,6 +39,9 @@ repo = 'hail2u/vim-css3-syntax'
 [[plugins]]
 repo = 'jelera/vim-javascript-syntax'
 
+[[plugins]]
+repo = 'tpope/vim-surround'
+
 # 特定のファイルタイプで読み込む
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
