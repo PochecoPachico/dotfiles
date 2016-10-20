@@ -42,6 +42,9 @@ repo = 'jelera/vim-javascript-syntax'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+[[plugins]]
+repo = 'gko/vim-coloresque'
+
 # 特定のファイルタイプで読み込む
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
