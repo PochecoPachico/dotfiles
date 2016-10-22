@@ -264,6 +264,9 @@ nnoremap <up> gk
 " スクロールに余裕を
 set scrolloff=3
 
+" コマンド補完
+set wildmenu
+
 " タブ設定
 set expandtab
 set tabstop=2
