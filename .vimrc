@@ -308,8 +308,10 @@ inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 "文字コード関連
-set encoding=utf-8
-set fileencodings=utf-8,cp932
+set fileencoding=utf-8
+set fileencodings=ucs-boms,utf-8,euc-jp,cp932
+set fileformats=unix,dos,mac
+set ambiwidth=double
 
 " ヤンクした内容をクリップボードへ
 set clipboard+=unnamedplus,unnamed
