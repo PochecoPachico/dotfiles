@@ -253,7 +253,13 @@ set mouse=a
 set backspace=indent,eol,start
 
 "回り込み
-set whichwrap=b,s,[,],<,>
+set whichwrap=b,s,h,l,<,>,[,],~
+
+" 行が折り返されている時に表示行単位で移動する
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
 
 " スクロールに余裕を
 set scrolloff=3
