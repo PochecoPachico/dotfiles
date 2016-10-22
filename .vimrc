@@ -259,7 +259,9 @@ set whichwrap=b,s,[,],<,>
 set scrolloff=3
 
 " タブ設定
+set expandtab
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set autoindent
 set smartindent
