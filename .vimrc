@@ -261,6 +261,23 @@ nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
 
+" insertモードでカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+" 方向キーを使えないようにする
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
+
 " スクロールに余裕を
 set scrolloff=3
 
@@ -297,16 +314,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " markdown 折りたたみなし
 let g:vim_markdown_folding_disabled=1
 
-" 方向キーを使えないようにする
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-
 " タブ移動
 nnoremap <Space>p :tabprevious<CR>
 nnoremap <Space>n :tabnext<CR>
@@ -326,12 +333,6 @@ set ambiwidth=double
 
 " ヤンクした内容をクリップボードへ
 set clipboard+=unnamedplus,unnamed
-
-" insertモードでカーソル移動
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
 
 "検索ハイライトを消す
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
