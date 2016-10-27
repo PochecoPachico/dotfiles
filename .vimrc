@@ -327,9 +327,6 @@ set ambiwidth=double
 " ヤンクした内容をクリップボードへ
 set clipboard+=unnamedplus,unnamed
 
-" キーマップ変更
-inoremap kj <ESC>
-
 " insertモードでカーソル移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
