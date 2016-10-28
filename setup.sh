@@ -7,5 +7,5 @@ ln -sv $HOME/.dotfiles/.vimrc_light $HOME/.vimrc_light
 ln -sv $HOME/.dotfiles/.vim $HOME/.vim
 ln -sv $HOME/.dotfiles/.atom $HOME/.atom
 
-mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}}
+mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
