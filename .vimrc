@@ -23,7 +23,7 @@ let s:toml_file      = g:rc_dir . '/dein.toml'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir, [$MYVIMRC, s:toml_file])
 
-    " TOML を読み込み、キャッシュしておく
+  " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml_file)
 
   " 設定終了
@@ -77,9 +77,9 @@ nnoremap <silent> <C-r>  :<C-u>UniteResume search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
-	let g:unite_source_grep_command = 'ag'
-	let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-	let g:unite_source_grep_recursive_opt = ''
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
 endif
 
 " VimFiler
@@ -105,33 +105,33 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-        \ 'colorscheme': 'wombat',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [
-        \     ['mode', 'paste'],
-        \     ['fugitive', 'gitgutter', 'filename'],
-        \   ],
-        \   'right': [
-        \     ['lineinfo', 'syntastic'],
-        \     ['percent'],
-        \     ['fileformat', 'fileencoding', 'filetype'],
-        \   ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'MyModified',
-        \   'readonly': 'MyReadonly',
-        \   'fugitive': 'MyFugitive',
-        \   'filename': 'MyFilename',
-        \   'fileformat': 'MyFileformat',
-        \   'filetype': 'MyFiletype',
-        \   'fileencoding': 'MyFileencoding',
-        \   'mode': 'MyMode',
-        \   'syntastic': 'SyntasticStatuslineFlag',
-        \   'charcode': 'MyCharCode',
-        \   'gitgutter': 'MyGitGutter',
-        \ },
-        \ }
+      \ 'colorscheme': 'wombat',
+      \ 'mode_map': {'c': 'NORMAL'},
+      \ 'active': {
+      \   'left': [
+      \     ['mode', 'paste'],
+      \     ['fugitive', 'gitgutter', 'filename'],
+      \   ],
+      \   'right': [
+      \     ['lineinfo', 'syntastic'],
+      \     ['percent'],
+      \     ['fileformat', 'fileencoding', 'filetype'],
+      \   ]
+      \ },
+      \ 'component_function': {
+      \   'modified': 'MyModified',
+      \   'readonly': 'MyReadonly',
+      \   'fugitive': 'MyFugitive',
+      \   'filename': 'MyFilename',
+      \   'fileformat': 'MyFileformat',
+      \   'filetype': 'MyFiletype',
+      \   'fileencoding': 'MyFileencoding',
+      \   'mode': 'MyMode',
+      \   'syntastic': 'SyntasticStatuslineFlag',
+      \   'charcode': 'MyCharCode',
+      \   'gitgutter': 'MyGitGutter',
+      \ },
+      \ }
 
 function! MyModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -310,8 +310,8 @@ set noerrorbells
 
 " ファイルを閉じともundoを可能にする
 if has('persistent_undo')
-	set undodir=~/.vim/undo
-	set undofile
+  set undodir=~/.vim/undo
+  set undofile
 endif
 
 " markdown md拡張子に対応
@@ -350,14 +350,14 @@ nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 " vimを半透明にする
 if !has('gui_running')
-	augroup seiya
-		autocmd!
-		autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
-		autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=none
-		autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=none
-		autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=none
-		autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none
-	augroup END
+  augroup seiya
+    autocmd!
+    autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
+    autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=none
+    autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=none
+    autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=none
+    autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none
+  augroup END
 endif
 
 " ファイル形式別インデントのロードを有効化
@@ -365,8 +365,8 @@ filetype plugin indent on
 
 " MacVim
 if has("gui_macvim")
-	set columns=110
-	set lines=40
+  set columns=110
+  set lines=40
   set guioptions-=T
   set guioptions-=m
   set guioptions-=r
@@ -374,11 +374,11 @@ if has("gui_macvim")
   set guioptions-=l
   set guioptions-=L
   set guioptions-=b
-	set guifont=Ubuntu\ Mono\ derivative\ Powerline:h16
+  set guifont=Ubuntu\ Mono\ derivative\ Powerline:h16
 elseif has('gui_running')
-	" gVim
-	set columns=110
-	set lines=40
+  " gVim
+  set columns=110
+  set lines=40
   set showtabline=2
   set guioptions-=T
   set guioptions-=m
@@ -387,5 +387,5 @@ elseif has('gui_running')
   set guioptions-=l
   set guioptions-=L
   set guioptions-=b
-	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
 endif
