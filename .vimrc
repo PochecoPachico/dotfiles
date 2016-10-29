@@ -329,9 +329,10 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
-"文字コード関連
-set fileencoding=utf-8
-set fileencodings=ucs-boms,utf-8,euc-jp,cp932
+" 文字コード関連
+set encoding=utf-8 " vim自身の文字コード 
+set fileencoding=utf-8 " 保存される文字コード
+set fileencodings=ucs-boms,utf-8,euc-jp,cp932 " 開こうとする文字コード、左から順番に読み込んでいく
 set fileformats=unix,dos,mac
 set ambiwidth=double
 
