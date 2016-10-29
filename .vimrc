@@ -277,6 +277,12 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
+" ウィンドウサイズの変更
+
+nnoremap <C-k> <C-w>3-
+nnoremap <C-j> <C-w>3+
+nnoremap <C-l> <C-w>3>
+nnoremap <C-h> <C-w>3<
 
 " スクロールに余裕を
 set scrolloff=3
