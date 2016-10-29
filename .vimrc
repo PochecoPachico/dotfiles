@@ -365,8 +365,8 @@ filetype plugin indent on
 
 " MacVim
 if has("gui_macvim")
-  set columns=110
-  set lines=40
+  set columns=140
+  set lines=50
   set guioptions-=T
   set guioptions-=m
   set guioptions-=r
@@ -374,6 +374,7 @@ if has("gui_macvim")
   set guioptions-=l
   set guioptions-=L
   set guioptions-=b
+  set guioptions-=e
   set guifont=Ubuntu\ Mono\ derivative\ Powerline:h16
 elseif has('gui_running')
   " gVim
@@ -387,5 +388,6 @@ elseif has('gui_running')
   set guioptions-=l
   set guioptions-=L
   set guioptions-=b
+  set guioptions-=e
   set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
 endif
