@@ -314,6 +314,10 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " markdown 折りたたみなし
 let g:vim_markdown_folding_disabled=1
 
+" Good bye "Thanks for flying vim
+let &t_ti .= "\e[22;0t"
+let &t_te .= "\e[23;0t"
+
 " タブ移動
 nnoremap <Space>p :tabprevious<CR>
 nnoremap <Space>n :tabnext<CR>
