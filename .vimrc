@@ -367,21 +367,25 @@ filetype plugin indent on
 if has("gui_macvim")
 	set columns=110
 	set lines=40
+  set guioptions-=T
+  set guioptions-=m
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
+  set guioptions-=b
 	set guifont=Ubuntu\ Mono\ derivative\ Powerline:h16
-else
+elseif has('gui_running')
 	" gVim
-	if has('gui_running')
-		set columns=110
-		set lines=40
-    set showtabline=2
-    set guioptions-=T
-    set guioptions-=m
-    set guioptions-=r
-    set guioptions-=R
-    set guioptions-=l
-    set guioptions-=L
-    set guioptions-=b
-		set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
-	endif
+	set columns=110
+	set lines=40
+  set showtabline=2
+  set guioptions-=T
+  set guioptions-=m
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
+  set guioptions-=b
+	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
 endif
-
