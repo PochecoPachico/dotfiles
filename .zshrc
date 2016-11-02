@@ -40,13 +40,13 @@ SAVEHIST=1000000
 # sshで接続されている時は[REMOTE]と赤文字で表示されるようにする
 
 if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} = "undefined" ]; then 
-    REMOTE_PROMPT="%K{240}%F{250}|%f%k"
+    REMOTE_PROMPT=""
   else 
-    REMOTE_PROMPT="%K{210}%F{white} REMOTE %f%k"
+    REMOTE_PROMPT="%K{red}%F{white} REMOTE %f%k"
 fi
 
 function zle-line-init zle-keymap-select {
-  PROMPT="$(vi_mode_prompt_info)%K{240}%F{250} %n | %m %f${REMOTE_PROMPT}%k%K{240}%F{250} %~ %f%k
+  PROMPT="$(vi_mode_prompt_info)%K{240}%F{250} %n | %m %f${REMOTE_PROMPT}%k%F{green} %~ %f
 %(?,$,%F{red}$%f) "
   zle reset-prompt
 }
