@@ -1,5 +1,8 @@
-#license : MIT
+# license : MIT
 # http://mollifier.mit-license.org/
+
+# キーバインドをviにする
+bindkey -v
 
 #色設定
 if [[ $TERM = xterm ]]; then
@@ -35,13 +38,27 @@ SAVEHIST=1000000
 # 失敗したら色を赤くする
 
 # sshで接続されている時は[REMOTE]と赤文字で表示されるようにする
+
 if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} = "undefined" ]; then 
-	PROMPT="%F{yellow}[%n@%m]%f %F{green}%~%f
-%(?,$,%F{red}$%f) "
-else 
-	PROMPT="%F{yellow}[%n@%m]%f%F{red}[REMOTE]%f %F{green}%~%f
-%(?,$,%F{red}$%f) "
+    REMOTE_PROMPT="%K{240}%F{250}|%f%k"
+  else 
+    REMOTE_PROMPT="%K{210}%F{white} REMOTE %f%k"
 fi
+
+function zle-line-init zle-keymap-select {
+  PROMPT="$(vi_mode_prompt_info)%K{240}%F{250} %n | %m %f${REMOTE_PROMPT}%k%K{240}%F{250} %~ %f%k
+%(?,$,%F{red}$%f) "
+  zle reset-prompt
+}
+
+function vi_mode_prompt_info() {
+  VIM_NORMAL="%K{87}%F{black} NORMAL %f%k"
+  VIM_INSERT="%K{82}%F{black} INSERT %f%k"
+  echo "${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
