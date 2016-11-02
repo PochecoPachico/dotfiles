@@ -42,7 +42,7 @@ SAVEHIST=1000000
 if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} = "undefined" ]; then 
     REMOTE_PROMPT="%K{240}%F{250}| %f%k"
   else 
-    REMOTE_PROMPT="%K{red}%F{white} REMOTE %f%k%K{240}%F{250}| %f%k"
+    REMOTE_PROMPT="%K{red}%F{white} REMOTE %f%k%K{240}%F{250} %f%k"
 fi
 
 function zle-line-init zle-keymap-select {
