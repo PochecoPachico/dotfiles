@@ -98,8 +98,8 @@ autoload -Uz add-zsh-hook
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!%f"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+%f"
-zstyle ':vcs_info:*' formats ' %K{136}%F{white} %s%c%u %f%k%K{240}%F{250} %b %f%k'
-zstyle ':vcs_info:*' actionformats '%K{136}%F{white} %s%c%u %f%k%K{240} %F{red}%b%f F{white}|%f F{red}%a%f %k'
+zstyle ':vcs_info:*' formats ' %K{cyan}%F{white} %s%c%u %f%k%K{240}%F{250} %b %f%k'
+zstyle ':vcs_info:*' actionformats '%K{cyan}%F{white} %s%c%u %f%k%K{240} %F{red}%b%f F{white}|%f F{red}%a%f %k'
 
 function _update_vcs_info_msg() {
 	LANG=en_US.UTF-8 vcs_info
