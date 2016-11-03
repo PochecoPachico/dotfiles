@@ -47,7 +47,7 @@ fi
 
 function zle-line-init zle-keymap-select {
   PROMPT="$(vi_mode_prompt_info)%K{240}%F{250} %n | %m %f${REMOTE_PROMPT}%k%K{240}%F{250}| %~ %f%k
-%(?,>>>,%F{red}>>>%f) "
+%(?,>>,%F{red}>>%f) "
   zle reset-prompt
 }
 
