@@ -42,11 +42,11 @@ SAVEHIST=1000000
 if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} = "undefined" ]; then 
     REMOTE_PROMPT=""
   else 
-    REMOTE_PROMPT="%F{red}[REMOTE]%f"
+    REMOTE_PROMPT="%F{red}[REMOTE]%f "
 fi
 
 function zle-line-init zle-keymap-select {
-  PROMPT="$(vi_mode_prompt_info)%K{240}%F{250} %n | %m %f${REMOTE_PROMPT}%k%K{240}%F{250} | %~ %f%k
+  PROMPT="$(vi_mode_prompt_info)%K{240}%F{250} %n | %m %f${REMOTE_PROMPT}%k%K{240}%F{250}| %~ %f%k
 %(?,$,%F{red}$%f) "
   zle reset-prompt
 }
