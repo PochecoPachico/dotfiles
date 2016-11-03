@@ -47,13 +47,13 @@ fi
 
 function zle-line-init zle-keymap-select {
   PROMPT="$(vi_mode_prompt_info)%K{240}%F{250} %n | %m %f${REMOTE_PROMPT}%k%K{240}%F{250}| %~ %f%k
-%(?,$,%F{red}$%f) "
+%(?,>>>,%F{red}>>>%f) "
   zle reset-prompt
 }
 
 function vi_mode_prompt_info() {
-  VIM_NORMAL="%K{87}%F{black} NORMAL %f%k"
-  VIM_INSERT="%K{82}%F{black} INSERT %f%k"
+  VIM_NORMAL="%K{81}%F{black} NORMAL %f%k"
+  VIM_INSERT="%K{118}%F{black} INSERT %f%k"
   echo "${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
 }
 
@@ -98,8 +98,8 @@ autoload -Uz add-zsh-hook
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!%f"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+%f"
-zstyle ':vcs_info:*' formats '%c%u%K{202}%F{white} %s %f%k%K{240}%F{250} %b %f%f'
-zstyle ':vcs_info:*' actionformats '%c%u%K{202}%F{white} %s %f%k%K{240}%F{red} %b | %a %f%k'
+zstyle ':vcs_info:*' formats ' %K{136}%F{white} %s%c%u %f%k%K{240}%F{250} %b %f%k'
+zstyle ':vcs_info:*' actionformats '%K{136}%F{white} %s%c%u %f%k%K{240} %F{red}%b%f F{white}|%f F{red}%a%f %k'
 
 function _update_vcs_info_msg() {
 	LANG=en_US.UTF-8 vcs_info
