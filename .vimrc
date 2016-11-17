@@ -303,8 +303,7 @@ set smartindent
 " 色設定 
 syntax enable
 set background=dark
-colorscheme solarized
-call togglebg#map('<F5>')
+colorscheme Tomorrow-Night
 
 "音設定
 set visualbell t_vb=

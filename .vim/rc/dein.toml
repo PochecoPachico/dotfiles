@@ -27,6 +27,9 @@ repo = 'mattn/emmet-vim'
 repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
+repo = 'chriskempson/vim-tomorrow-theme' 
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 
 # html, css, javascript
