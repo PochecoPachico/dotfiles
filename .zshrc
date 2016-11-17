@@ -4,6 +4,9 @@
 # キーバインドをviにする
 bindkey -v
 
+# kjでvicmd modeへ
+bindkey -M viins 'kj' vi-cmd-mode
+
 #色設定
 if [[ $TERM = xterm ]]; then
 	TERM=xterm-256color
