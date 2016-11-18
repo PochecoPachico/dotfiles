@@ -83,7 +83,7 @@ if executable('ag')
 endif
 
 " VimFiler
-command Vf VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit
+command Vf VimFiler -buffer-name=explorer -split -simple -winwidth=25 -toggle -no-quit
 nnoremap <C-e> :Vf <CR>
 
 let g:vimfiler_as_default_explorer = 1
