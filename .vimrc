@@ -336,6 +336,9 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
+inoremap {} {}<Left>
+inoremap () ()<Left>
+
 " 文字コード関連
 set encoding=utf-8 " vim自身の文字コード 
 set fileencoding=utf-8 " 保存される文字コード
