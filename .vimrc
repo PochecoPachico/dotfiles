@@ -331,9 +331,7 @@ nnoremap <Space>n :tabnext<CR>
 nnoremap <Space>c :tabnew<CR>
 
 " カッコ補完
-inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 inoremap {} {}<Left>
