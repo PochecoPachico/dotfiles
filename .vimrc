@@ -330,12 +330,15 @@ nnoremap <Space>p :tabprevious<CR>
 nnoremap <Space>n :tabnext<CR>
 nnoremap <Space>c :tabnew<CR>
 
-" カッコ補完
+" カッコ, クォーテーション補完
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 inoremap {} {}<Left>
 inoremap () ()<Left>
+
+inoremap '' ''<Left>
+inoremap "" ""<Left>
 
 " 文字コード関連
 set encoding=utf-8 " vim自身の文字コード 
