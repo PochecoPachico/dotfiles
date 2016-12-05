@@ -24,9 +24,6 @@ repo = 'airblade/vim-gitgutter'
 repo = 'mattn/emmet-vim'
 
 [[plugins]]
-repo = 'altercation/vim-colors-solarized'
-
-[[plugins]]
 repo = 'chriskempson/vim-tomorrow-theme' 
 
 [[plugins]]
