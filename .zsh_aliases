@@ -1,5 +1,5 @@
-alias la='ls -a'
-alias ll='ls -l'
+alias la='ls -a -v'
+alias ll='ls -l -v'
 
 alias rm='rm -i -v'
 alias cp='cp -i -v'
@@ -58,11 +58,11 @@ case ${OSTYPE} in
 		# gVim
 		alias gvim="open -a MacVim"
 		export CLICOLOR=1
-		alias ls='ls -G -F'
+		alias ls='ls -G -F -1 -v'
 	;;
 	linux*)
 		# linux
-		alias ls='ls -F --color=auto'
+		alias ls='ls -F -1 -v --color=auto'
 	;;
 esac
 
