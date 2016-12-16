@@ -48,9 +48,13 @@ if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} =
     REMOTE_PROMPT="%F{red}[REMOTE]%f "
 fi
 
+USER_AND_HOST="%F{250} %n | %m %f"
+CURRENT_DIR="%F{250}| %~ %f"
+INPUT_ARROW="%(?,>>,%F{red}>>%f)"
+
 function zle-line-init zle-keymap-select {
-  PROMPT="$(vi_mode_prompt_info)%K{240}%F{250} %n | %m %f${REMOTE_PROMPT}%k%K{240}%F{250}| %~ %f%k
-%(?,>>,%F{red}>>%f) "
+  PROMPT="$(vi_mode_prompt_info)%K{240}${USER_AND_HOST}${REMOTE_PROMPT}${vcs_info_msg_0_}${CURRENT_DIR}%k
+${INPUT_ARROW} "
   zle reset-prompt
 }
 
@@ -59,6 +63,24 @@ function vi_mode_prompt_info() {
   VIM_INSERT="%K{118}%F{black} INSERT %f%k"
   echo "${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
 }
+
+# vcs_info
+autoload -Uz vcs_info
+autoload -Uz add-zsh-hook
+
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!%f"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+%f"
+zstyle ':vcs_info:*' formats '%F{250}| %b%c%u %f'
+zstyle ':vcs_info:*' actionformats '%F{red}%b%c%u%f F{white}|%f F{red}%a%f'
+
+# プロンプトが表示されるたびに実行される
+precmd () { vcs_info }
+setopt prompt_subst
+
+# vcs_infoが生成した情報を表示する
+PROMPT="$(vi_mode_prompt_info)%K{240}${USER_AND_HOST}${REMOTE_PROMPT}${vcs_info_msg_0_}${CURRENT_DIR}%k
+${INPUT_ARROW} "
 
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -93,22 +115,6 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
-
-# vcs_info
-autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
-
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!%f"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+%f"
-zstyle ':vcs_info:*' formats ' %K{105}%F{white} %s %f%k%K{240}%F{250} %b%c%u %f%k'
-zstyle ':vcs_info:*' actionformats '%K{105}%F{white} %s %f%k%K{240} %F{red}%b%c%u%f F{white}|%f F{red}%a%f %k'
-
-function _update_vcs_info_msg() {
-	LANG=en_US.UTF-8 vcs_info
-	RPROMPT="${vcs_info_msg_0_}"
-}
-add-zsh-hook precmd _update_vcs_info_msg
 
 # オプション
 # 日本語ファイル名を表示可能にする
