@@ -53,7 +53,7 @@ CURRENT_DIR="%F{250}| %~ %f"
 INPUT_ARROW="%(?,>>,%F{red}>>%f)"
 
 function zle-line-init zle-keymap-select {
-  PROMPT="$(vi_mode_prompt_info)%K{240}${USER_AND_HOST}${REMOTE_PROMPT}${vcs_info_msg_0_}${CURRENT_DIR}%k
+  PROMPT="$(vi_mode_prompt_info)%K{240}${USER_AND_HOST}${REMOTE_PROMPT}${CURRENT_DIR}${vcs_info_msg_0_}%k
 ${INPUT_ARROW} "
   zle reset-prompt
 }
@@ -69,10 +69,10 @@ autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!%f"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+%f"
-zstyle ':vcs_info:*' formats '%F{250}| %b%c%u %f'
-zstyle ':vcs_info:*' actionformats '%F{red}%b%c%u%f F{white}|%f F{red}%a%f'
+zstyle ':vcs_info:git:*' stagedstr "%K{208}%F{250} * %f%k"
+zstyle ':vcs_info:git:*' unstagedstr "%K{196}%F{250} + %f%k"
+zstyle ':vcs_info:*' formats '%K{92}%F{250} %b %f%k%c%u'
+zstyle ':vcs_info:*' actionformats '%K{92}%F{red} %b %a %f%k%c%u'
 
 # プロンプトが表示されるたびに実行される
 precmd () { vcs_info }
