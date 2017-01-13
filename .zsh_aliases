@@ -58,11 +58,11 @@ case ${OSTYPE} in
 		# gVim
 		alias gvim="open -a MacVim"
 		export CLICOLOR=1
-		alias ls='ls -G -F -1 -v'
+		alias ls='ls -G -F -v'
 	;;
 	linux*)
 		# linux
-		alias ls='ls -F -1 -v --color=auto'
+		alias ls='ls -F -v --color=auto'
 	;;
 esac
 
