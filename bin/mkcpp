@@ -17,6 +17,7 @@ do
 	#include <iostream>
 	#include <cmath>
 	#include <vector>
+  #include <string>
 	using namespace std;
 	
 	typedef long long ll;
