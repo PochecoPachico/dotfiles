@@ -48,12 +48,12 @@ if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} =
     REMOTE_PROMPT="%F{red}[REMOTE]%f "
 fi
 
-USER_AND_HOST="%F{250} %n | %m %f"
-CURRENT_DIR="%F{250}| %~ %f"
+HOST_NAME="%F{250} %m %f"
+CURRENT_DIR="%F{250}| %C %f"
 INPUT_ARROW="%(?,>>,%F{red}>>%f)"
 
 function zle-line-init zle-keymap-select {
-  PROMPT="$(vi_mode_prompt_info)%K{240}${USER_AND_HOST}${REMOTE_PROMPT}${CURRENT_DIR}${vcs_info_msg_0_}%k
+  PROMPT="$(vi_mode_prompt_info)%K{240}${HOST_NAME}${REMOTE_PROMPT}${CURRENT_DIR}${vcs_info_msg_0_}%k
 ${INPUT_ARROW} "
   zle reset-prompt
 }
@@ -79,7 +79,7 @@ precmd () { vcs_info }
 setopt prompt_subst
 
 # vcs_infoが生成した情報を表示する
-PROMPT="$(vi_mode_prompt_info)%K{240}${USER_AND_HOST}${REMOTE_PROMPT}${vcs_info_msg_0_}${CURRENT_DIR}%k
+PROMPT="$(vi_mode_prompt_info)%K{240}${HOST_NAME}${REMOTE_PROMPT}${vcs_info_msg_0_}${CURRENT_DIR}%k
 ${INPUT_ARROW} "
 
 zle -N zle-line-init
