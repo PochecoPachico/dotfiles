@@ -58,6 +58,10 @@ on_ft = ['markdown']
 repo = 'tyru/open-browser.vim''
 on_ft = ['markdown']
 
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
 # インサートモードに入ったら読み込む
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
