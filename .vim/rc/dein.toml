@@ -45,6 +45,9 @@ repo = 'tpope/vim-surround'
 [[plugins]]
 repo = 'gko/vim-coloresque'
 
+[[plugins]]
+repo = 'AndrewRadev/switch.vim'
+
 # 特定のファイルタイプで読み込む
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
