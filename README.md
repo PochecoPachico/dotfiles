@@ -8,7 +8,7 @@ Mac，Ubuntu，Arch Linuxでうまく動くはず
 `git clone https://PochecoPachico@bitbucket.org/PochecoPachico/dotfiles .dotfiles`  
 を実行する
 ### 必須
-#### 1. install.shを実行する  
+#### 1. setup.shを実行する  
 実行すると以下の設定ファイルのシンボリックリンクが作成される
 
 ```
@@ -77,4 +77,4 @@ atomにインストールされたパッケージリストのエクスポート�
 
 
 ## 注意
-tmuxのバージョンは2.0以上でないとうまく設定が反映されないみたい
+tmuxのバージョンは2.4以上でないとうまく設定が反映されないみたい
