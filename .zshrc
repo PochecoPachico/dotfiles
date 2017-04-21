@@ -27,6 +27,16 @@ if test -e "$PYENV_ROOT/bin/pyenv" || test -e "$PYENV_ROOT/shims";  then
 	eval "$(pyenv init -)"
 fi
 
+# For rbenv
+if [ `which rbenv` ]; then
+  eval "$(rbenv init -)"
+fi
+
+# For dinghy
+if [ `which dinghy` ]; then
+  eval "$(dinghy shellinit)"
+fi
+
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
