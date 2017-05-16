@@ -28,6 +28,15 @@ alias ga='git add'
 alias gc='git commit'
 alias gco='git checkout'
 
+# docker-compose
+alias d-c='docker-compose'
+
+# Vagrant
+alias vh='vagrant halt'
+alias vr='vagrant reload'
+alias vs='vagrant ssh'
+alias vu='vagrant up'
+
 function current_branch() {
 	git_current_branch
 }
