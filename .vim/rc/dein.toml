@@ -51,6 +51,9 @@ repo = 'AndrewRadev/switch.vim'
 [[plugins]]
 repo = 'vim-syntastic/syntastic'
 
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
 # 特定のファイルタイプで読み込む
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
