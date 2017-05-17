@@ -28,12 +28,12 @@ if test -e "$PYENV_ROOT/bin/pyenv" || test -e "$PYENV_ROOT/shims";  then
 fi
 
 # For rbenv
-if [ `which rbenv` ]; then
+if which rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
 
 # For dinghy
-if [ `which dinghy` ]; then
+if which dinghy > /dev/null 2>&1; then
   eval "$(dinghy shellinit)"
 fi
 
