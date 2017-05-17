@@ -1,4 +1,4 @@
-# dotfilesの環境設定(2016年10月28日更新)
+# dotfilesの環境設定(2017年5月18日更新)
 
 備忘録  
 Mac，Ubuntu，Arch Linuxでうまく動くはず
@@ -17,7 +17,6 @@ Mac，Ubuntu，Arch Linuxでうまく動くはず
 .vimrc  
 .vimrc_light  
 .vim  
-.atom  
 ```  
 .vimrc_lightは軽量版のvimの設定ファイルで必要最低限だと思われる設定が記述されている  
 
@@ -44,8 +43,6 @@ Linuxは公式からtarを落としてきてgoをインストール
 ### 任意
 必要であればUbuntu mono powerlineをインストール  
 `git clone https://github.com/powerline/fonts`
-
-カラースキームはsolarizedにしたほうが見栄えが良くなります
 
 あとgitbucket用の公開鍵をパスワード無しで作ったほうがいいかも
 
