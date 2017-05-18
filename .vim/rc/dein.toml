@@ -40,6 +40,9 @@ repo = 'hail2u/vim-css3-syntax'
 repo = 'jelera/vim-javascript-syntax'
 
 [[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]
