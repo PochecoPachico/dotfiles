@@ -43,6 +43,9 @@ repo = 'jelera/vim-javascript-syntax'
 repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
+repo = 'fatih/vim-go'
+
+[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]
