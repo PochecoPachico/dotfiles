@@ -25,6 +25,7 @@ export PATH=$HOME/.dotfiles/bin:$PATH
 
 if test -e "$PYENV_ROOT/bin/pyenv" || test -e "$PYENV_ROOT/shims";  then
 	eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 # For rbenv
