@@ -20,14 +20,6 @@ alias ta='tmux a -t '
 alias tn='tmux new -s '
 alias tls='tmux ls'
 
-# git
-alias gst='git status'
-alias glog='git log --oneline --decorate --color --graph'
-alias gd='git diff'
-alias ga='git add'
-alias gc='git commit'
-alias gco='git checkout'
-
 # docker-compose
 alias d-c='docker-compose'
 
@@ -37,6 +29,7 @@ alias vr='vagrant reload'
 alias vs='vagrant ssh'
 alias vu='vagrant up'
 
+# git
 function current_branch() {
 	git_current_branch
 }
@@ -55,11 +48,17 @@ function git_current_branch() {
 alias ggpull="git pull origin $(current_branch)"
 alias ggpush="git push origin $(current_branch)"
 
+alias gst='git status'
+alias glog='git log --oneline --decorate --color --graph'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gco='git checkout'
+
 # OS毎にalias変更
 case ${OSTYPE} in
 	darwin*)
 		# Mac
-		alias webdir="cd /Applications/MAMP/htdocs/"
 		# brew実行時のPATH
 		export BREW_EXECUTE_PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Users/shioura/bin:
 		alias brew="env PATH=$BREW_EXECUTE_PATH brew "
