@@ -377,3 +377,15 @@ elseif has('gui_running')
   set guioptions=c
   set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
 endif
+
+" vimを半透明にする		
+if !has('gui_running')		
+  augroup seiya		
+    autocmd!		
+    autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none		
+    autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=none		
+    autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=none		
+    autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=none		
+    autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none		
+  augroup END		
+endif
