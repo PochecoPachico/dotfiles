@@ -32,14 +32,6 @@ Ubuntu
 `sudo apt-get install silversearcher-ag`  
 基本的にOSのパッケージ管理で入れられるみたい  
 
-#### 4. pecoのインストール
-pecoをインストールする前にgoを入れる必要があります  
-Macはbrewでインストールできます  
-`brew install go`  
-Linuxは公式からtarを落としてきてgoをインストール  
-次にpecoのインストール  
-`go get github.com/peco/peco/cmd/peco`  
-
 ### 任意
 必要であればUbuntu mono powerlineをインストール  
 `git clone https://github.com/powerline/fonts`
