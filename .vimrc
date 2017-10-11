@@ -1,7 +1,6 @@
 " filetype無効化
 filetype off
 
-" プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.vim/dein')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -14,19 +13,14 @@ if &runtimepath !~# '/dein.vim'
   execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-" プラグインリストを収めた TOML ファイル
-" 予め TOML ファイル（後述）を用意しておく
 let g:rc_dir    = expand('~/.vim/rc')
 let s:toml_file      = g:rc_dir . '/dein.toml'
 
-" 設定開始
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir, [$MYVIMRC, s:toml_file])
 
-  " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml_file)
 
-  " 設定終了
   call dein#end()
   call dein#save_state()
 endif
@@ -317,7 +311,7 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
-" 色設定 
+" 色設定
 syntax enable
 set background=dark
 colorscheme Tomorrow-Night
@@ -326,7 +320,7 @@ colorscheme Tomorrow-Night
 set visualbell t_vb=
 set noerrorbells
 
-" ファイルを閉じともundoを可能にする
+" ファイルを閉じてもundoを可能にする
 if has('persistent_undo')
   set undodir=~/.vim/undo
   set undofile
@@ -337,10 +331,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " markdown 折りたたみなし
 let g:vim_markdown_folding_disabled=1
-
-" Good bye "Thanks for flying vim
-let &t_ti .= "\e[22;0t"
-let &t_te .= "\e[23;0t"
 
 " タブ移動
 nnoremap <Space>p :tabprevious<CR>
@@ -358,7 +348,7 @@ inoremap '' ''<Left>
 inoremap "" ""<Left>
 
 " 文字コード関連
-set encoding=utf-8 " vim自身の文字コード 
+set encoding=utf-8 " vim自身の文字コード
 set fileencoding=utf-8 " 保存される文字コード
 set fileencodings=ucs-boms,utf-8,euc-jp,cp932 " 開こうとする文字コード、左から順番に読み込んでいく
 set fileformats=unix,dos,mac
@@ -369,18 +359,6 @@ set clipboard+=unnamedplus,unnamed
 
 "検索ハイライトを消す
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
-
-" vimを半透明にする
-if !has('gui_running')
-  augroup seiya
-    autocmd!
-    autocmd VimEnter,ColorScheme * highlight Normal ctermbg=none
-    autocmd VimEnter,ColorScheme * highlight LineNr ctermbg=none
-    autocmd VimEnter,ColorScheme * highlight SignColumn ctermbg=none
-    autocmd VimEnter,ColorScheme * highlight VertSplit ctermbg=none
-    autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none
-  augroup END
-endif
 
 " ファイル形式別インデントのロードを有効化
 filetype plugin indent on
