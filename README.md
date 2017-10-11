@@ -1,4 +1,4 @@
-# dotfilesの環境設定(2017年5月18日更新)
+# dotfilesの環境設定(2017年10月11日更新)
 
 備忘録  
 Mac，Ubuntu，Arch Linuxでうまく動くはず
