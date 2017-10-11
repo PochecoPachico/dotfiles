@@ -147,38 +147,3 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # エイリアス
 source ~/.dotfiles/.zsh_aliases
-
-# OS別の設定(peco)
-case ${OSTYPE} in
-	darwin*)
-		# Mac
-		export GOROOT=/usr/local/opt/go/libexec
-		export GOPATH=$HOME
-		export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-	;;
-	linux*)
-		# Linux
-		export GOROOT=/usr/local/go
-		export GOPATH=$HOME/go
-		# ssh接続した時にローカルの環境変数がリモートに送信されるのでその対処
-		export LC_ALL=en_US.UTF-8
-		export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-	;;
-esac
-
-# 履歴検索
-function peco-select-history() {
-	local tac
-	if which tac > /dev/null; then
-		tac="tac"
-	else
-		tac="tail -r"
-	fi
-	BUFFER=$(\history -n 1 | \
-	eval $tac | \
-	peco --query "$LBUFFER")
-	CURSOR=$#BUFFER
-	zle clear-screen
-}
-zle -N peco-select-history
-bindkey '^r' peco-select-history
