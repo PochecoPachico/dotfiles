@@ -4,6 +4,10 @@ bindkey -v
 # kjでvicmd modeへ
 bindkey -M viins 'kj' vi-cmd-mode
 
+# インクリメンタル検索
+bindkey "^R" history-incremental-search-backward
+bindkey "^S" history-incremental-search-forward
+
 #色設定
 if [[ $TERM = xterm ]]; then
 	TERM=xterm-256color
@@ -134,6 +138,7 @@ setopt share_history
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_reduce_blanks
+setopt hist_verify
 setopt extended_glob
 
 # ls色設定
