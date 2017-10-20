@@ -5,6 +5,7 @@ alias rm='rm -i -v'
 alias cp='cp -i -v'
 alias mv='mv -i -v'
 alias chmod='chmod -v'
+alias grep='grep --color=auto'
 alias mkdir='mkdir -p'
 alias pd='popd'
 alias relogin="exec $SHELL -l"
