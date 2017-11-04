@@ -1,9 +1,3 @@
-# キーバインドをviにする
-bindkey -v
-
-# kjでvicmd modeへ
-bindkey -M viins 'kj' vi-cmd-mode
-
 # インクリメンタル検索
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
@@ -56,23 +50,19 @@ SAVEHIST=1000000
 if [ ${SSH_CLIENT:-undefined} = "undefined" ] && [ ${SSH_CONECTION:-undefined} = "undefined" ]; then
     REMOTE_PROMPT=""
   else
-    REMOTE_PROMPT="%F{red}[REMOTE]%f "
+    REMOTE_PROMPT="%F{red}[REMOTE]%f"
 fi
 
-HOST_NAME="%F{250} %m %f"
-CURRENT_DIR="%F{250}| %C %f"
-INPUT_ARROW="%(?,>>,%F{red}>>%f)"
+USER_NAME="%n"
+HOST_NAME="%m"
+CURRENT_DIR="%~"
+INPUT_SIGN="%(?,$,%F{red}$%f)"
 
 function zle-line-init zle-keymap-select {
-  PROMPT="$(vi_mode_prompt_info)%K{240}${HOST_NAME}${REMOTE_PROMPT}${CURRENT_DIR}${vcs_info_msg_0_}%k
-${INPUT_ARROW} "
+  PROMPT="%F{3}[${USER_NAME}@${HOST_NAME}]%f${REMOTE_PROMPT} %F{120}${CURRENT_DIR}%f 
+${INPUT_SIGN} "
+  RPROMPT="${vcs_info_msg_0_}"
   zle reset-prompt
-}
-
-function vi_mode_prompt_info() {
-  VIM_NORMAL="%K{81}%F{black} NORMAL %f%k"
-  VIM_INSERT="%K{118}%F{black} INSERT %f%k"
-  echo "${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
 }
 
 # vcs_info
@@ -80,18 +70,17 @@ autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%K{208}%F{250} * %f%k"
-zstyle ':vcs_info:git:*' unstagedstr "%K{196}%F{250} + %f%k"
-zstyle ':vcs_info:*' formats '%K{92}%F{250} %b %f%k%c%u'
-zstyle ':vcs_info:*' actionformats '%K{92}%F{red} %b %a %f%k%c%u'
+zstyle ':vcs_info:git:*' stagedstr "%F{208}*%f"
+zstyle ':vcs_info:git:*' unstagedstr "%F{196}+%f"
+zstyle ':vcs_info:*' formats '%F{165}[%b]%f%c%u'
+zstyle ':vcs_info:*' actionformats '%F{red}[%b %a]%f%c%u'
 
 # プロンプトが表示されるたびに実行される
 precmd () { vcs_info }
 setopt prompt_subst
 
 # vcs_infoが生成した情報を表示する
-PROMPT="$(vi_mode_prompt_info)%K{240}${HOST_NAME}${REMOTE_PROMPT}${vcs_info_msg_0_}${CURRENT_DIR}%k
-${INPUT_ARROW} "
+RPROMPT="${vcs_info_msg_0_}"
 
 zle -N zle-line-init
 zle -N zle-keymap-select
