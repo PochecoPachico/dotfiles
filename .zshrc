@@ -59,7 +59,7 @@ CURRENT_DIR="%~"
 INPUT_SIGN="%(?,$,%F{red}$%f)"
 
 function zle-line-init zle-keymap-select {
-  PROMPT="%F{3}[${USER_NAME}@${HOST_NAME}]%f${REMOTE_PROMPT} %F{120}${CURRENT_DIR}%f 
+  PROMPT="%F{yellow}[${USER_NAME}@${HOST_NAME}]%f${REMOTE_PROMPT} %F{green}${CURRENT_DIR}%f 
 ${INPUT_SIGN} "
   RPROMPT="${vcs_info_msg_0_}"
   zle reset-prompt
