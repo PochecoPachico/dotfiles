@@ -72,7 +72,7 @@ autoload -Uz add-zsh-hook
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{208}*%f"
 zstyle ':vcs_info:git:*' unstagedstr "%F{196}+%f"
-zstyle ':vcs_info:*' formats '%F{165}[%b]%f%c%u'
+zstyle ':vcs_info:*' formats '%c%u%F{165}[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}[%b %a]%f%c%u'
 
 # プロンプトが表示されるたびに実行される
