@@ -1,3 +1,12 @@
+# コマンド履歴検索
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^p" history-beginning-search-backward-end
+bindkey "\e[A" history-beginning-search-backward-end
+bindkey "^n" history-beginning-search-forward-end
+bindkey "\e[B" history-beginning-search-forward-end
+
 # インクリメンタル検索
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
