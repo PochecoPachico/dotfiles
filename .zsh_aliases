@@ -61,7 +61,7 @@ case ${OSTYPE} in
 	darwin*)
 		# Mac
 		# brew実行時のPATH
-		export BREW_EXECUTE_PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Users/shioura/bin:
+		export BREW_EXECUTE_PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Users/shioura/bin:
 		alias brew="env PATH=$BREW_EXECUTE_PATH brew "
 
 		# gVim
