@@ -1,0 +1,43 @@
+#!/bin/sh
+
+function notify() {
+  COLOR=$1
+  TITLE=$2
+  TEXT=$3
+  DATA=`cat << EOF
+    payload={
+    "attachments": [{
+        "color": "$COLOR",
+        "title": "$TITLE",
+        "text": "$TEXT"
+      }]
+    }
+  EOF`
+  curl -X POST --data-urlencode "$DATA" $WEBHOOK_URL
+}
+
+
+CONFIG_FILE="$HOME/.webhook_url"
+
+if [ ! -e $CONFIG_FILE ]; then
+  echo "Webhook url was not found, please make ~/.webhook_url and set slack webhook url."
+  exit 1
+fi
+
+while read line; do
+  WEBHOOK_URL=$line
+done < $CONFIG_FILE
+
+HOST=`hostname`
+COMMAND=$*
+notify "#4169e1" "Command Started @ $HOST" "Command: $COMMAND"
+SECONDS=0
+eval $COMMAND
+COMMAND_RESULT=$?
+TIME=$SECONDS
+
+if [ $COMMAND_RESULT = 0 ]; then
+  notify "#008000" "Command Succeeded @ $HOST" "Command: $COMMAND\nTime: $TIME [sec]"
+else
+  notify "#dc143c" "Command Failed @ $HOST" "Command: $COMMAND\nTime: $TIME [sec]"
+fi
