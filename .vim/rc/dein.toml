@@ -12,9 +12,6 @@ hook_post_update = '''
 repo = 'Shougo/vimfiler'
 
 [[plugins]]
-repo = 'Shougo/vimshell.vim'
-
-[[plugins]]
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
