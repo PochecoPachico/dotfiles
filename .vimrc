@@ -244,6 +244,25 @@ hi SyntasticErrorSign ctermfg=160
 hi SyntasticWarningSign ctermfg=220
 
 
+" Neosnippet Plugin key-mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-s> <Plug>(neosnippet_expand_target)
+ 
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+ 
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+let g:neosnippet#snippets_directory = '~/.vim/snippets/'
+
 """"" 環境設定 """""
 set number
 set cursorline
@@ -270,12 +289,6 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <down> gj
 nnoremap <up> gk
-
-" insertモードでカーソル移動
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
 
 " 方向キーを使えないようにする
 noremap <Up> <Nop>
