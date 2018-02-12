@@ -246,7 +246,6 @@ hi SyntasticWarningSign ctermfg=220
 
 " Neosnippet Plugin key-mappings.
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-s> <Plug>(neosnippet_expand_target)
  
 " SuperTab like snippets behavior.
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
