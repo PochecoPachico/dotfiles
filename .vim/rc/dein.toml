@@ -12,6 +12,15 @@ hook_post_update = '''
 repo = 'Shougo/vimfiler'
 
 [[plugins]]
+repo = 'Shougo/neocomplcache'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
