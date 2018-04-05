@@ -5,14 +5,14 @@ function notify() {
   TITLE=$2
   TEXT=$3
   DATA=`cat << EOF
-    payload={
-    "attachments": [{
-        "color": "$COLOR",
-        "title": "$TITLE",
-        "text": "$TEXT"
-      }]
-    }
-  EOF`
+payload={
+"attachments": [{
+"color": "$COLOR",
+"title": "$TITLE",
+"text": "$TEXT"
+}]
+}
+EOF`
   curl -X POST --data-urlencode "$DATA" $WEBHOOK_URL
 }
 
