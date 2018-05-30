@@ -10,6 +10,8 @@ alias mkdir='mkdir -p'
 alias pd='popd'
 alias relogin="exec $SHELL -l"
 
+alias g++='g++ -std=c++14'
+
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
