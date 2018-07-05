@@ -400,3 +400,5 @@ if !has('gui_running')
     autocmd VimEnter,ColorScheme * highlight NonText ctermbg=none		
   augroup END		
 endif
+
+autocmd BufWritePost *.cpp :lcd %:h |:!g++ -std=c++14 %:p
