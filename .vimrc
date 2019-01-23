@@ -274,6 +274,9 @@ set laststatus=2
 set showtabline=2
 set noshowmode
 
+" texの数式レンダリングを無効にする
+let g:tex_conceal = ''
+
 " マウスの設定
 set mouse=a
 
