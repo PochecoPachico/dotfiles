@@ -20,19 +20,8 @@ alias sudo='sudo '
 alias vi='vim -u NONE --noplugin'
 alias lvi="vim -u $HOME/.vimrc_light"
 
-# tmux
-alias ta='tmux a -t '
-alias tn='tmux new -s '
-alias tls='tmux ls'
-
 # docker-compose
 alias d-c='docker-compose'
-
-# Vagrant
-alias vh='vagrant halt'
-alias vr='vagrant reload'
-alias vs='vagrant ssh'
-alias vu='vagrant up'
 
 # git
 function current_branch() {
