@@ -325,6 +325,9 @@ set shiftwidth=2
 set autoindent
 set smartindent
 
+autocmd FileType c setlocal sw=4 sts=4 ts=4 et
+autocmd FileType cpp setlocal sw=4 sts=4 ts=4 et
+
 " 色設定
 syntax enable
 set background=dark
