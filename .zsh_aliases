@@ -1,5 +1,5 @@
 alias la='ls -a -v'
-alias ll='ls -l -v'
+alias ll='ls -l -v -h'
 
 alias rm='rm -i -v'
 alias cp='cp -i -v'
