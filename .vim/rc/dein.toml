@@ -83,6 +83,10 @@ on_ft = ['markdown']
 repo = 'slim-template/vim-slim'
 on_ft = ['slim']
 
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
 # インサートモードに入ったら読み込む
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'

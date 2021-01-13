@@ -262,6 +262,9 @@ endif
 
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 
+" rust.vim
+let g:rustfmt_autosave = 1
+
 """"" 環境設定 """""
 set number
 set cursorline
