@@ -21,7 +21,7 @@ alias vi='vim -u NONE --noplugin'
 alias lvi="vim -u $HOME/.vimrc_light"
 
 # docker-compose
-alias d-c='docker-compose'
+alias d-c='docker compose'
 
 # git
 function current_branch() {
